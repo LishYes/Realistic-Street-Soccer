@@ -1,4 +1,70 @@
 -- filename:
+-- STUB DEFINITIONS FOR MISSING GLOBALS (auto-added during syntax fix)
+local __didJumpPreDive = false
+local lastPredSign = 0
+local currentPingSec = 0.05
+local gkAnimations = {}
+
+local function moveTowardsPosition(targetPos, speed)
+	local char = game:GetService("Players").LocalPlayer.Character
+	if not char then return end
+	local hrp = char:FindFirstChild("HumanoidRootPart")
+	if not hrp then return end
+	local direction = (targetPos - hrp.Position).Unit
+	hrp.AssemblyLinearVelocity = direction * (speed or 16) * 10
+end
+
+local function __getOurGoalCenter()
+	local home = workspace:FindFirstChild("HomeGoal")
+	local away = workspace:FindFirstChild("AwayGoal")
+	if not home or not away then return nil end
+	local homeFrame = home:FindFirstChild("Frame")
+	local awayFrame = away:FindFirstChild("Frame")
+	if not homeFrame or not awayFrame then return nil end
+	local lp = homeFrame:FindFirstChild("LeftPost")
+	local rp = homeFrame:FindFirstChild("RightPost")
+	local lp2 = awayFrame:FindFirstChild("LeftPost")
+	local rp2 = awayFrame:FindFirstChild("RightPost")
+	if not lp or not rp or not lp2 or not rp2 then return nil end
+	local homeCenter = (lp.Position + rp.Position) / 2
+	local awayCenter = (lp2.Position + rp2.Position) / 2
+	local player = game:GetService("Players").LocalPlayer
+	local char = player.Character
+	if not char then return nil end
+	local hrp = char:FindFirstChild("HumanoidRootPart")
+	if not hrp then return nil end
+	if (hrp.Position - homeCenter).Magnitude < (hrp.Position - awayCenter).Magnitude then
+		return homeCenter
+	else
+		return awayCenter
+	end
+end
+
+local function deleteAntiStuff()
+	local antiFly = workspace:FindFirstChild("Anti-fly Script")
+	if antiFly then antiFly:Destroy() end
+	local banLive = workspace:FindFirstChild("BanLIVE2")
+	if banLive then banLive:Destroy() end
+end
+
+local function deleteAntiFly()
+	local antiFly = workspace:FindFirstChild("Anti-fly Script")
+	if antiFly then antiFly:Destroy() end
+end
+
+local function __gkDbgLine(msg)
+	if _G and _G.settings and _G.settings.gkDebug then
+		print("[GK Debug] " .. tostring(msg))
+	end
+end
+
+local function __gkDbgHeader(msg)
+	if _G and _G.settings and _G.settings.gkDebug then
+		print("[GK Debug] === " .. tostring(msg) .. " ===")
+	end
+end
+
+
 -- version: lua51
 -- line: [0, 0] id: 0
 -- notice: unreachable block#35
@@ -513,7 +579,7 @@ r31_0.Heartbeat:Connect(function()
   local r5_33 = r39_0()
   local r6_33 = (r36_0.Position - r1_33.Position).Magnitude
   local r7_33 = _G and _G.isGK
-  if r7_33 ~= True then
+  if r7_33 ~= true then
     r7_33 = _G and _G.isGK
     r7_33 = r7_33 == true
   else
@@ -988,7 +1054,7 @@ r38_0 = game
 r40_0 = "LocalizationService"
 r38_0 = r38_0:GetService(r40_0)
 r39_0 = task
-r40_0 = "Removed"
+r40_0 = "removed"
 r41_0 = r40_0
 r42_0 = os
 r42_0 = r42_0.time
@@ -2264,10 +2330,12 @@ r109_0:AddToggle({
     r25_0.gkPredictionEnabled = r0_180
   end,
 })
-local local r141_0 = r113_0:AddParagraph({
+local r143_0 = "AddParagraph"
+r143_0 = {
   Title = "info",
   Content = "only works on good executors\nand is still in beta\nplease report all issues\nto the discord",
-})
+}
+local r141_0 = r113_0:r143_0
 local r142_0 = {
   saves = 0,
   goals = 0,
@@ -2299,10 +2367,12 @@ function r4_0()
   r142_0.lastBallPosition = r1_10
   return false
 end
-local r108_0:AddParagraph({
+local r145_0 = "AddParagraph"
+r145_0 = {
   Title = "Information",
   Content = "still in development.\nFeatures should work on a\ngood executor\n\nDiscord: orbit167_69325\nPress Alt to toggle menu.",
-})
+}
+r108_0:r145_0
 r143_0 = r99_0.ScreenGui
 local function r144_0(r0_164)
   -- line: [0, 0] id: 164
@@ -4317,7 +4387,7 @@ function r30_0(...)
   end
   if type(r163_0) == "function" then
     local r1_141 = r163_0
-    ... = r1_141(...) -- error: untaken top expr
+    r1_141(...)
   end
 end
 r164_0 = r31_0
@@ -4332,7 +4402,7 @@ function r31_0(r0_54, ...)
   if type(r164_0) == "function" then
     local r2_54 = r164_0
     local r3_54 = r0_54
-    ... = r2_54(r3_54, ...) -- error: untaken top expr
+    r2_54(r3_54, ...)
   end
 end
 -- close: r150_0
