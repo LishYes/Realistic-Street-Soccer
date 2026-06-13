@@ -1,0 +1,4379 @@
+-- filename:
+-- version: lua51
+-- line: [0, 0] id: 0
+-- notice: unreachable block#35
+local r0_0 = nil
+local r2_0 = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
+for r4_0, r5_0 in pairs(r2_0:GetChildren()) do
+  if r5_0:IsA("RemoteEvent") and r5_0:GetAttribute("Tags") then
+    r0_0 = r5_0
+    break
+  end
+end
+if r0_0 then
+  local r1_0 = getrawmetatable(game)
+  setreadonly(r1_0, false)
+  r2_0 = r1_0.__namecall
+  r1_0.__namecall = newcclosure(function(r0_125, ...)
+    -- line: [0, 0] id: 125
+    if not checkcaller() and r0_125 == r0_0 and getnamecallmethod() == "FireServer" then
+      return
+    end
+    return r2_0(r0_125, ...)
+  end)
+  setreadonly(r1_0, true)
+  -- close: r1_0
+end
+local r1_0 = getgenv()
+r2_0 = {}
+r2_0.core = true
+r2_0.memory = true
+r2_0.market = true
+r2_0.parent = true
+r2_0.garbage = true
+r2_0.message = true
+r2_0.analytics = true
+r2_0.property = true
+r2_0.raw = false
+r2_0.debug = false
+r2_0.proxy = true
+r2_0.memoryleak = true
+r2_0.environment = true
+r1_0.bypassConfig = r2_0
+r2_0 = game
+loadstring(r2_0:HttpGet("https://raw.githubusercontent.com/the-unnamed-goose/lua-buffoonery/development/universal/bypass.lua"))
+r1_0 = game:GetService("RunService")
+r2_0 = game
+r2_0 = r2_0:GetService("Stats")
+local r3_0 = game:GetService("ContentProvider")
+local r4_0 = nil
+local r5_0 = nil
+local r6_0 = nil
+local r7_0 = nil
+local r8_0 = nil
+local r9_0 = nil
+local r10_0 = nil
+local function r11_0()
+  -- line: [0, 0] id: 179
+end
+local r12_0 = game:GetService("Players")
+local r13_0 = "https://discord.gg/vgSBYCyAbV"
+pcall(function()
+  -- line: [0, 0] id: 74
+  if typeof(setclipboard) == "function" then
+    setclipboard(r13_0)
+  end
+end)
+local r14_0 = game:GetService("StarterGui")
+task.wait(1)
+pcall(function()
+  -- line: [0, 0] id: 29
+  r14_0:SetCore("SendNotification", {
+    Title = "discord copied to clipboard",
+    Text = "join my discord server!",
+    Duration = 10,
+  })
+end)
+local r15_0 = "we.love.cathook"
+local r16_0 = "mango1"
+local r17_0 = "https://discord.gg/vgSBYCyAbV"
+local r18_0 = false
+local r19_0 = "cathook_rss.key"
+local function r21_0(r0_147)
+  -- line: [0, 0] id: 147
+  if typeof(writefile) == "function" then
+    pcall(writefile, r19_0, tostring(r0_147))
+  end
+end
+local r22_0 = (function()
+  -- line: [0, 0] id: 174
+  if typeof(isfile) == "function" and isfile(r19_0) and typeof(readfile) == "function" then
+    local r0_174, r1_174 = pcall(readfile, r19_0)
+    if r0_174 and type(r1_174) == "string" then
+      return r1_174:gsub("%s+$", "")
+    end
+  end
+  return nil
+end)()
+if r22_0 == r15_0 or r22_0 == r16_0 then
+  if _G and type(_G.settings) == "table" and _G.settings.gkDebug and __gkDbgLine then
+    __gkDbgLine("Key loaded from file; skipping key UI")
+  end
+  r18_0 = true
+end
+pcall(function()
+  -- line: [0, 0] id: 102
+  if r18_0 then
+    return
+  end
+  local r0_102 = game:GetService("Players")
+  local r1_102 = game:GetService("StarterGui")
+  local r2_102 = r0_102.LocalPlayer
+  if not r2_102 then
+    return
+  end
+  local r3_102 = r2_102:FindFirstChild("PlayerGui") or r2_102:WaitForChild("PlayerGui", 5)
+  if not r3_102 then
+    return
+  end
+  local r4_102 = Instance.new("ScreenGui")
+  r4_102.Name = "RSS_KeyGui"
+  r4_102.ResetOnSpawn = false
+  r4_102.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+  r4_102.IgnoreGuiInset = false
+  r4_102.Parent = r3_102
+  local r5_102 = Instance.new("Frame")
+  r5_102.Size = UDim2.new(0, 520, 0, 180)
+  r5_102.Position = UDim2.new(0.5, -260, 0.36, -20)
+  r5_102.AnchorPoint = Vector2.new(0.5, 0.5)
+  r5_102.BackgroundColor3 = Color3.fromRGB(20, 20, 22)
+  r5_102.BorderSizePixel = 0
+  r5_102.Parent = r4_102
+  local r6_102 = Instance.new("UICorner")
+  r6_102.CornerRadius = UDim.new(0, 16)
+  r6_102.Parent = r5_102
+  local r7_102 = Instance.new("UIStroke")
+  r7_102.Thickness = 1
+  r7_102.Transparency = 0.2
+  r7_102.Color = Color3.fromRGB(70, 70, 75)
+  r7_102.Parent = r5_102
+  local r8_102 = Instance.new("ImageLabel")
+  r8_102.Name = "Shadow"
+  r8_102.BackgroundTransparency = 1
+  r8_102.Image = "rbxassetid://5028857084"
+  r8_102.ImageTransparency = 0.3
+  r8_102.ScaleType = Enum.ScaleType.Slice
+  r8_102.SliceCenter = Rect.new(24, 24, 276, 276)
+  r8_102.Size = UDim2.new(1, 40, 1, 40)
+  r8_102.Position = UDim2.new(0, -20, 0, -20)
+  r8_102.ZIndex = 0
+  r8_102.Parent = r5_102
+  local r9_102 = Instance.new("UIPadding")
+  r9_102.PaddingTop = UDim.new(0, 16)
+  r9_102.PaddingBottom = UDim.new(0, 16)
+  r9_102.PaddingLeft = UDim.new(0, 16)
+  r9_102.PaddingRight = UDim.new(0, 16)
+  r9_102.Parent = r5_102
+  local r10_102 = Instance.new("TextLabel")
+  r10_102.Size = UDim2.new(1, 0, 0, 28)
+  r10_102.BackgroundTransparency = 1
+  r10_102.Font = Enum.Font.GothamBold
+  r10_102.TextSize = 22
+  r10_102.Text = "Enter key to load script"
+  r10_102.TextColor3 = Color3.fromRGB(255, 255, 255)
+  r10_102.TextXAlignment = Enum.TextXAlignment.Left
+  r10_102.Parent = r5_102
+  local r11_102 = Instance.new("TextBox")
+  r11_102.Size = UDim2.new(1, 0, 0, 46)
+  r11_102.Position = UDim2.new(0, 0, 0, 40)
+  r11_102.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+  local r12_102 = Instance.new("UICorner")
+  r12_102.CornerRadius = UDim.new(0, 10)
+  r12_102.Parent = r11_102
+  local r13_102 = Instance.new("UIStroke")
+  r13_102.Thickness = 1
+  r13_102.Color = Color3.fromRGB(60, 60, 66)
+  r13_102.Transparency = 0.15
+  r13_102.Parent = r11_102
+  r11_102.ClearTextOnFocus = false
+  r11_102.Text = ""
+  r11_102.PlaceholderText = "Paste key here"
+  r11_102.Font = Enum.Font.Gotham
+  r11_102.TextSize = 18
+  r11_102.TextColor3 = Color3.fromRGB(235, 235, 235)
+  r11_102.Parent = r5_102
+  local r14_102 = Instance.new("Frame")
+  r14_102.Size = UDim2.new(1, 0, 0, 44)
+  r14_102.Position = UDim2.new(0, 0, 0, 100)
+  r14_102.BackgroundTransparency = 1
+  r14_102.Parent = r5_102
+  local r15_102 = Instance.new("UIListLayout")
+  r15_102.FillDirection = Enum.FillDirection.Horizontal
+  r15_102.Padding = UDim.new(0, 12)
+  r15_102.HorizontalAlignment = Enum.HorizontalAlignment.Right
+  r15_102.VerticalAlignment = Enum.VerticalAlignment.Center
+  r15_102.Parent = r14_102
+  local function r16_102(r0_103, r1_103)
+    -- line: [0, 0] id: 103
+    local r2_103 = Instance.new("TextButton")
+    r2_103.Size = UDim2.new(0, r1_103 or 160, 1, 0)
+    r2_103.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+    local r3_103 = Instance.new("UICorner")
+    r3_103.CornerRadius = UDim.new(0, 10)
+    r3_103.Parent = r2_103
+    local r4_103 = Instance.new("UIStroke")
+    r4_103.Thickness = 1
+    r4_103.Color = Color3.fromRGB(80, 80, 90)
+    r4_103.Transparency = 0.2
+    r4_103.Parent = r2_103
+    r2_103.Font = Enum.Font.GothamBold
+    r2_103.TextSize = 18
+    r2_103.Text = r0_103
+    r2_103.TextColor3 = Color3.fromRGB(255, 255, 255)
+    r2_103.AutoButtonColor = true
+    r2_103.Parent = r14_102
+    return r2_103
+  end
+  local function r17_102(r0_104, r1_104)
+    -- line: [0, 0] id: 104
+    pcall(function()
+      -- line: [0, 0] id: 105
+      local r0_105 = r1_102
+      local r2_105 = "SendNotification"
+      local r3_105 = {
+        Title = "cathook: RSS",
+        Text = r0_104,
+        Duration = r1_104 or 4,
+      }
+      r0_105:SetCore(r2_105, r3_105)
+    end)
+  end
+  local r18_102 = r16_102("Get Key (copy invite)", 220)
+  local r19_102 = r16_102("Submit", 120)
+  r18_102.MouseButton1Click:Connect(function()
+    -- line: [0, 0] id: 107
+    if typeof(setclipboard) == "function" then
+      setclipboard(r17_0)
+      r17_102("Discord invite copied to clipboard.", 3)
+    else
+      r17_102("Clipboard not available. Invite: " .. r17_0, 6)
+    end
+  end)
+  r19_102.MouseButton1Click:Connect(function()
+    -- line: [0, 0] id: 108
+    local r0_108 = tostring(r11_102.Text or "")
+    if r0_108 == r15_0 or r0_108 == r16_0 then
+      r18_0 = true
+      r17_102("Key accepted. Loading script...", 3)
+      r4_102:Destroy()
+      r21_0(r0_108)
+    else
+      r17_102("Invalid key.", 4)
+      pcall(function()
+        -- line: [0, 0] id: 109
+        r11_102.BackgroundColor3 = Color3.fromRGB(70, 34, 34)
+        task.delay(0.35, function()
+          -- line: [0, 0] id: 110
+          if r11_102 and r11_102.Parent then
+            r11_102.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+          end
+        end)
+      end)
+    end
+  end)
+  r11_102.FocusLost:Connect(function(r0_106)
+    -- line: [0, 0] id: 106
+    if r0_106 then
+      r19_102:MouseButton1Click()
+    end
+  end)
+end)
+repeat
+  task.wait()
+until r18_0
+r22_0 = request or http_request or syn and syn.request
+if not r22_0 then
+  warn("Request function not available, bad executor")
+end
+local r23_0 = game:GetService("ReplicatedStorage")
+local r24_0 = game:GetService("RunService")
+local r25_0 = {
+  tackleEnabled = false,
+  dribbleEnabled = false,
+  tackleRange = 10,
+  dribbleRange = 17,
+  gkAutoSaveEnabled = false,
+  gkPredictionEnabled = true,
+  gkSaveRange = 20,
+  gkMovementSpeed = 45,
+  gkAggression = 15,
+  gkDiveDistance = 28,
+  gkDiveHeight = 1,
+  gkMinDiveDistance = 3,
+  gkRepositionThreshold = 2.5,
+  gkDebug = false,
+}
+if r25_0.gkAutoRushEnabled == nil then
+  r25_0.gkAutoRushEnabled = true
+end
+if game.PlaceId == 16071359275 or game.PlaceId == 16213033715 then
+  r25_0.tackleRange = 15
+end
+local r26_0 = {
+  ["17748025748"] = true,
+  ["17590392784"] = true,
+  ["17743274227"] = true,
+  ["127593117332707"] = true,
+  ["16331006011"] = true,
+  ["14893581487"] = true,
+  ["133996236884225"] = true,
+  ["140030983315202"] = true,
+  ["14899049391"] = true,
+  ["15154280353"] = true,
+  ["17590081108"] = true,
+  ["14328586766"] = true,
+  ["14908212300"] = true,
+  ["121059135011282"] = true,
+}
+local function r27_0(r0_55)
+  -- line: [0, 0] id: 55
+  if not r0_55 then
+    return false
+  end
+  local r1_55 = r0_55:FindFirstChildOfClass("Animator")
+  if not r1_55 then
+    return false
+  end
+  for r5_55, r6_55 in ipairs(r1_55:GetPlayingAnimationTracks()) do
+    local r7_55 = r6_55.Animation and r6_55.Animation.AnimationId
+    if type(r7_55) == "string" then
+      local r8_55 = r7_55:match("%d+")
+      if r8_55 and r26_0[r8_55] then
+        return true
+      end
+    end
+  end
+  return false
+end
+local r28_0 = game:GetService("VirtualInputManager")
+local function r29_0(r0_88)
+  -- line: [0, 0] id: 88
+  local r1_88 = nil -- notice: implicit variable refs by block#[5]
+  if r0_88 == "Left" then
+    r1_88 = Enum.KeyCode.Q
+    if not r1_88 then
+      ::label_7::
+      if r0_88 == "Right" then
+        r1_88 = Enum.KeyCode.E
+        if not r1_88 then
+          ::label_14::
+          r1_88 = Enum.KeyCode.X
+        end
+      else
+        goto label_14 -- block#4 is visited secondly
+      end
+    end
+  else
+    goto label_7 -- block#2 is visited secondly
+  end
+  pcall(function()
+    -- line: [0, 0] id: 89
+    r28_0:SendKeyEvent(true, r1_88, false, game)
+    task.wait()
+    r28_0:SendKeyEvent(false, r1_88, false, game)
+  end)
+end
+local function r30_0()
+  -- line: [0, 0] id: 1
+  if game.PlaceId ~= 16071359275 and game.PlaceId ~= 16213033715 then
+    return
+  end
+  pcall(function()
+    -- line: [0, 0] id: 2
+    r28_0:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+    task.wait(0.03 + (currentPingSec or 0))
+    r28_0:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+  end)
+end
+local r31_0 = game:GetService("RunService")
+local r32_0 = game:GetService("Players")
+local r33_0 = r32_0.LocalPlayer
+local r34_0 = nil
+local r35_0 = nil
+local r36_0 = nil
+local function r37_0()
+  -- line: [0, 0] id: 181
+  r34_0 = r33_0.Character or r33_0.CharacterAdded:Wait()
+  r35_0 = r34_0:WaitForChild("Humanoid", 5)
+  r36_0 = r34_0:WaitForChild("HumanoidRootPart", 5)
+end
+r37_0()
+local function r38_0()
+  -- line: [0, 0] id: 97
+  local r0_97 = workspace
+  local r1_97 = nil -- notice: implicit variable refs by block#[3]
+  if r0_97 then
+    r1_97 = r0_97:FindFirstChild("ball")
+    if not r1_97 then
+      ::label_8::
+      r1_97 = nil
+    end
+  else
+    goto label_8 -- block#2 is visited secondly
+  end
+  return r1_97
+end
+local function r39_0()
+  -- line: [0, 0] id: 140
+  local r0_140 = r34_0 and r34_0:FindFirstChild("Head")
+  if r0_140 then
+    return r0_140.Position.Y
+  end
+  local r1_140 = r36_0
+  if r1_140 then
+    r1_140 = r36_0.Position.Y + 2 or 0
+  else
+    goto label_21 -- block#6 is visited secondly
+  end
+  return r1_140
+end
+if _G.isGK == nil then
+  _G.isGK = (function()
+    -- line: [0, 0] id: 87
+    local r0_87 = r34_0 and r34_0:FindFirstChild("Head")
+    if not r0_87 then
+      return false
+    end
+    local r1_87 = r0_87.Position.Y
+    local r2_87 = 0
+    local r3_87 = 0
+    local r4_87 = ipairs
+    for r7_87, r8_87 in r4_87(r32_0:GetPlayers()) do
+      if r8_87 ~= r33_0 and r8_87.Character and r8_87.Character:FindFirstChild("Head") then
+        local r9_87 = r8_87.Character.Head
+        if (r9_87.Position - r0_87.Position).Magnitude <= 500 then
+          r3_87 = r3_87 + 1
+          if r9_87.Position.Y + 0.5 < r1_87 then
+            r2_87 = r2_87 + 1
+          end
+        end
+      end
+    end
+    if r3_87 > 0 then
+      r4_87 = 0.5 <= r2_87 / r3_87
+    else
+      goto label_55 -- block#14 is visited secondly
+    end
+    return r4_87
+  end)()
+end
+local r40_0 = 0
+local r41_0 = 0.9
+local r42_0 = 0.6
+local r43_0 = 0.1
+local r44_0 = currentPingSec or 0.05
+local function r45_0(r0_96, r1_96, r2_96)
+  -- line: [0, 0] id: 96
+  local r3_96 = r2_96 - r0_96
+  if math.abs(r1_96) < 0.001 then
+    if r2_96 <= r0_96 then
+      return 0
+    end
+    return nil
+  end
+  local r4_96 = r3_96 / r1_96
+  if r4_96 < 0 then
+    if r2_96 <= r0_96 then
+      return 0
+    end
+    return nil
+  end
+  return r4_96
+end
+r31_0.Heartbeat:Connect(function()
+  -- line: [0, 0] id: 33
+  if game.PlaceId ~= 16071359275 and game.PlaceId ~= 16213033715 then
+    return
+  end
+  if not r33_0 then
+    return
+  end
+  if not r34_0 or not r34_0.Parent then
+    r37_0()
+  end
+  if not r36_0 or not r35_0 then
+    return
+  end
+  local r0_33 = os.clock()
+  if r0_33 - r40_0 < r41_0 then
+    return
+  end
+  local r1_33 = r38_0()
+  if not r1_33 then
+    return
+  end
+  local r2_33 = r1_33.AssemblyLinearVelocity or Vector3.zero
+  if r2_33.Magnitude <= 1 then
+    return
+  end
+  local r3_33 = nil
+  local r4_33 = nil
+  if type(r5_0) == "function" then
+    r3_33, r4_33 = r5_0()
+  else
+    r4_33 = nil
+    r3_33 = false
+  end
+  if not r3_33 then
+    return
+  end
+  if type(r25_0) ~= "table" or not r25_0.gkAutoSaveEnabled then
+    return
+  end
+  local r5_33 = r39_0()
+  local r6_33 = (r36_0.Position - r1_33.Position).Magnitude
+  local r7_33 = _G and _G.isGK
+  if r7_33 ~= True then
+    r7_33 = _G and _G.isGK
+    r7_33 = r7_33 == true
+  else
+    goto label_102 -- block#34 is visited secondly
+  end
+  if r7_33 and r5_33 + 1 <= r1_33.Position.Y then
+    if r6_33 <= 4 then
+      r40_0 = r0_33
+      r30_0()
+      return
+    end
+    local r9_33 = r2_33:Dot(r36_0.CFrame.RightVector)
+    if math.abs(r9_33) > 5 then
+      r40_0 = r0_33
+      local r10_33 = r6_0
+      local r11_33 = nil -- notice: implicit variable refs by block#[43]
+      if r9_33 > 0 then
+        r11_33 = "Right"
+        if not r11_33 then
+          ::label_135::
+          r11_33 = "Left"
+        end
+      else
+        goto label_135 -- block#42 is visited secondly
+      end
+      r10_33(r11_33)
+      return
+    end
+  end
+  local r8_33 = r45_0(r1_33.Position.Y, r2_33.Y, r5_33 + 1)
+  if r8_33 and r8_33 <= r42_0 + r44_0 and r8_33 <= r43_0 + r44_0 then
+    r40_0 = r0_33
+    r30_0()
+  end
+end)
+-- close: r31_0
+r33_0 = "RunService"
+r31_0 = game:GetService(r33_0)
+r32_0 = game
+r34_0 = "Players"
+r32_0 = r32_0:GetService(r34_0)
+r33_0 = game
+r35_0 = "VirtualInputManager"
+r33_0 = r33_0:GetService(r35_0)
+r34_0 = r32_0.LocalPlayer
+r35_0 = {
+  [16071359275] = true,
+  [16213033715] = true,
+}
+function r36_0()
+  -- line: [0, 0] id: 160
+  local r0_160 = r34_0 and r34_0.Character
+  local r1_160 = nil -- notice: implicit variable refs by block#[5]
+  if r0_160 then
+    r1_160 = r0_160:FindFirstChild("HumanoidRootPart")
+    if not r1_160 then
+      ::label_12::
+      r1_160 = nil
+    end
+  else
+    goto label_12 -- block#4 is visited secondly
+  end
+  return r1_160
+end
+function r37_0()
+  -- line: [0, 0] id: 90
+  local r0_90 = r34_0 and r34_0.Character
+  local r1_90 = r0_90 and r0_90:FindFirstChild("Head")
+  if r1_90 then
+    return r1_90.Position.Y
+  end
+  local r2_90 = r36_0()
+  local r3_90 = nil -- notice: implicit variable refs by block#[9]
+  if r2_90 then
+    r3_90 = r2_90.Position.Y + 2
+    if not r3_90 then
+      ::label_24::
+      r3_90 = 0
+    end
+  else
+    goto label_24 -- block#8 is visited secondly
+  end
+  return r3_90
+end
+function r38_0()
+  -- line: [0, 0] id: 36
+  local r0_36 = workspace
+  local r1_36 = nil -- notice: implicit variable refs by block#[4]
+  if r0_36 then
+    r1_36 = r0_36:FindFirstChild("ball")
+    if not r1_36 then
+      r1_36 = r0_36:FindFirstChild("Ball")
+      if not r1_36 then
+        ::label_13::
+        r1_36 = nil
+      end
+    end
+  else
+    goto label_13 -- block#3 is visited secondly
+  end
+  return r1_36
+end
+function r39_0(r0_44)
+  -- line: [0, 0] id: 44
+  if not r0_44 then
+    return Vector3.zero
+  end
+  return r0_44.AssemblyLinearVelocity or r0_44.Velocity or Vector3.zero
+end
+r40_0 = 0
+r41_0 = r31_0.Heartbeat
+function r43_0()
+  -- line: [0, 0] id: 127
+  if not r35_0[game.PlaceId] then
+    return
+  end
+  if type(r25_0) ~= "table" or not r25_0.gkAutoSaveEnabled then
+    return
+  end
+  local r0_127 = r36_0()
+  local r1_127 = r38_0()
+  if not r0_127 or not r1_127 then
+    return
+  end
+  local r2_127 = os.clock()
+  if r2_127 - r40_0 < 0.4 then
+    return
+  end
+  local r3_127 = r39_0(r1_127)
+  if r3_127.Magnitude < 5 then
+    return
+  end
+  local r5_127 = r0_127.Position - r1_127.Position
+  local r6_127 = r5_127.Magnitude
+  if r6_127 > 0 then
+    r6_127 = r3_127.Unit:Dot(r5_127.Unit) or 0
+  else
+    goto label_53 -- block#14 is visited secondly
+  end
+  local r7_127 = r37_0()
+  local r9_127 = r1_127.Position + r3_127 * 0.18
+  local r10_127 = r9_127.Y
+  if r7_127 + 0.6 > r10_127 then
+    r10_127 = r7_127 + 0.6 <= r1_127.Position.Y
+  else
+    goto label_70 -- block#18 is visited secondly
+  end
+  local r11_127 = (r1_127.Position - r0_127.Position).Magnitude
+  local r12_127 = (r9_127 - r0_127.Position).Magnitude
+  local r13_127 = game.PlaceId
+  if r13_127 ~= 16071359275 then
+    r13_127 = game.PlaceId
+    if r13_127 == 16213033715 then
+      ::label_86::
+      r13_127 = 20 or 18
+    else
+      goto label_89 -- block#22 is visited secondly
+    end
+  else
+    goto label_86 -- block#21 is visited secondly
+  end
+  local r14_127 = nil -- notice: implicit variable refs by block#[28]
+  if r6_127 >= 0.7 then
+    r14_127 = r12_127 + 0.4 < r11_127
+  else
+    goto label_95 -- block#25 is visited secondly
+  end
+  if r10_127 and r14_127 and r11_127 <= r13_127 then
+    local r15_127 = (r9_127 - r0_127.Position):Dot(r0_127.CFrame.RightVector)
+    if 4 < math.abs(r15_127) and type(r29_0) == "function" then
+      pcall(r30_0)
+      local r16_127 = pcall
+      local r17_127 = r29_0
+      local r18_127 = nil -- notice: implicit variable refs by block#[35]
+      if r15_127 > 0 then
+        r18_127 = "Right"
+        if not r18_127 then
+          ::label_130::
+          r18_127 = "Left"
+        end
+      else
+        goto label_130 -- block#34 is visited secondly
+      end
+      r16_127(r17_127, r18_127)
+    else
+      pcall(r30_0)
+    end
+    r40_0 = r2_127
+  end
+end
+r41_0:Connect(r43_0)
+-- close: r31_0
+r33_0 = "Players"
+r31_0 = game:GetService(r33_0)
+r32_0 = game
+r34_0 = "RunService"
+r32_0 = r32_0:GetService(r34_0)
+r33_0 = r31_0.LocalPlayer
+function r34_0()
+  -- line: [0, 0] id: 8
+  local r0_8 = r33_0 and r33_0.Character
+  local r1_8 = nil -- notice: implicit variable refs by block#[5]
+  if r0_8 then
+    r1_8 = r0_8:FindFirstChild("HumanoidRootPart")
+    if not r1_8 then
+      ::label_12::
+      r1_8 = nil
+    end
+  else
+    goto label_12 -- block#4 is visited secondly
+  end
+  return r1_8
+end
+function r35_0()
+  -- line: [0, 0] id: 166
+  local r0_166 = workspace
+  local r1_166 = nil -- notice: implicit variable refs by block#[4]
+  if r0_166 then
+    r1_166 = r0_166:FindFirstChild("ball")
+    if not r1_166 then
+      r1_166 = r0_166:FindFirstChild("Ball")
+      if not r1_166 then
+        ::label_13::
+        r1_166 = nil
+      end
+    end
+  else
+    goto label_13 -- block#3 is visited secondly
+  end
+  return r1_166
+end
+function r36_0(r0_124)
+  -- line: [0, 0] id: 124
+  if not r0_124 then
+    return Vector3.zero
+  end
+  return r0_124.AssemblyLinearVelocity or r0_124.Velocity or Vector3.zero
+end
+r37_0 = 22
+r38_0 = 6.5
+r39_0 = 0.3
+r40_0 = 0
+r41_0 = r32_0.Heartbeat
+function r43_0()
+  -- line: [0, 0] id: 12
+  -- notice: unreachable block#16
+  if game.PlaceId ~= 16071359275 and game.PlaceId ~= 16213033715 then
+    return
+  end
+  if not r25_0 or not r25_0.gkAutoSaveEnabled then
+    return
+  end
+  local r0_12 = r34_0()
+  local r1_12 = r35_0()
+  if not r0_12 or not r1_12 then
+    return
+  end
+  local r2_12 = os.clock()
+  if r2_12 - r40_0 < r39_0 then
+    return
+  end
+  local r3_12 = r36_0(r1_12)
+  if r3_12.Magnitude < 5 then
+    return
+  end
+  local r4_12 = r0_12.Position - r1_12.Position
+  local r5_12 = r4_12.Magnitude
+  if r5_12 > 0 then
+    r5_12 = 0.55 < r3_12.Unit:Dot(r4_12.Unit)
+  else
+    goto label_54 -- block#15 is visited secondly
+  end
+  local r7_12 = r1_12.Position + r3_12 * 0.22
+  local r8_12 = (r1_12.Position - r0_12.Position).Magnitude
+  if not r5_12 or r37_0 < r8_12 then
+    return
+  end
+  local r9_12 = (r7_12 - r0_12.Position):Dot(r0_12.CFrame.RightVector)
+  local r10_12 = math.abs(r9_12)
+  if r10_12 <= r38_0 * 1.05 then
+    return
+  end
+  if r9_12 > 0 then
+    r10_12 = "Right" or "Left"
+  else
+    goto label_92 -- block#25 is visited secondly
+  end
+  r40_0 = r2_12
+  if type(r6_0) == "function" then
+    pcall(r6_0, r10_12)
+  else
+    if type(r30_0) == "function" then
+      pcall(r30_0)
+    end
+    if type(r29_0) == "function" then
+      pcall(r29_0, r10_12)
+    end
+  end
+end
+r41_0:Connect(r43_0)
+-- close: r31_0
+function r31_0(r0_186)
+  -- line: [0, 0] id: 186
+  if game.PlaceId ~= 16071359275 and game.PlaceId ~= 16213033715 then
+    return
+  end
+  r30_0()
+  r29_0(r0_186)
+end
+function r32_0()
+  -- line: [0, 0] id: 72
+  local r0_72 = workspace:FindFirstChild("ball")
+  if not r0_72 then
+    return nil
+  end
+  local r1_72 = r0_72:FindFirstChild("creator")
+  if r1_72 and r1_72.Value and typeof(r1_72.Value) == "Instance" then
+    if r1_72.Value:IsA("Player") then
+      return r1_72.Value
+    end
+    if r1_72.Value:IsA("Model") then
+      local r2_72 = game:GetService("Players"):GetPlayerFromCharacter(r1_72.Value)
+      if r2_72 then
+        return r2_72
+      end
+    end
+  end
+  local r2_72 = r0_72:FindFirstChild("playerWeld")
+  if r2_72 and r2_72.Part0 and r2_72.Part0.Parent then
+    local r3_72 = game:GetService("Players"):GetPlayerFromCharacter(r2_72.Part0.Parent)
+    if r3_72 then
+      return r3_72
+    end
+  end
+  return nil
+end
+r33_0 = game
+r35_0 = "Players"
+r33_0 = r33_0:GetService(r35_0)
+r34_0 = game
+r36_0 = "RunService"
+r34_0 = r34_0:GetService(r36_0)
+r35_0 = r33_0.LocalPlayer
+function r36_0(r0_50)
+  -- line: [0, 0] id: 50
+  if not r0_50 then
+    return nil
+  end
+  return r0_50:FindFirstChild("HumanoidRootPart")
+end
+function r37_0(r0_37, r1_37)
+  -- line: [0, 0] id: 37
+  local r2_37 = false
+  pcall(function()
+    -- line: [0, 0] id: 38
+    r2_37 = r0_37 and r0_37.TeamColor == r35_0.TeamColor
+  end)
+  if not r0_37 or not r1_37 then
+    return false
+  end
+  if r0_37 == r35_0 then
+    return false
+  end
+  if r2_37 then
+    return false
+  end
+  local r3_37 = r36_0(r0_37.Character)
+  if not r3_37 then
+    return false
+  end
+  return (r3_37.Position - r1_37.Position).Magnitude <= 7
+end
+r38_0 = task
+r38_0 = r38_0.spawn
+function r39_0()
+  -- line: [0, 0] id: 52
+  -- notice: unreachable block#26
+  while true do
+    task.wait(0.05)
+    if r25_0 then
+      local r0_52 = r25_0.gkAutoRushEnabled
+      if r0_52 then
+        r0_52 = r35_0.Character
+        local r1_52 = r0_52 and r0_52:FindFirstChild("HumanoidRootPart")
+        local r2_52 = workspace:FindFirstChild("ball")
+        if r1_52 and r2_52 then
+          local r3_52 = r32_0
+          if r3_52 then
+            r3_52 = r32_0() or nil
+          else
+            goto label_34 -- block#9 is visited secondly
+          end
+          if r3_52 and r37_0(r3_52, r2_52) then
+            local r5_52 = r36_0(r3_52.Character)
+            if r5_52 then
+              local r6_52 = game.PlaceId
+              if r6_52 ~= 16071359275 then
+                r6_52 = game.PlaceId == 16213033715
+              else
+                goto label_58 -- block#16 is visited secondly
+              end
+              local r7_52 = nil -- notice: implicit variable refs by block#[23]
+              if r6_52 then
+                r7_52 = 10
+                if not r7_52 then
+                  ::label_64::
+                  r7_52 = 9
+                end
+              else
+                goto label_64 -- block#19 is visited secondly
+              end
+              local r8_52 = nil -- notice: implicit variable refs by block#[24]
+              if r6_52 then
+                r8_52 = 14
+                if not r8_52 then
+                  ::label_70::
+                  r8_52 = 13
+                end
+              else
+                goto label_70 -- block#22 is visited secondly
+              end
+              local r10_52 = (r2_52.Position - r1_52.Position).Magnitude
+              if (r5_52.Position - r1_52.Position).Magnitude <= r7_52 and r10_52 <= r8_52 then
+                r1_52.CFrame = CFrame.new(r1_52.Position, Vector3.new(r5_52.Position.X, r1_52.Position.Y, r5_52.Position.Z))
+                pcall(function()
+                  -- line: [0, 0] id: 53
+                  r28_0:SendKeyEvent(true, Enum.KeyCode.X, false, game)
+                  task.wait(0.02)
+                  r28_0:SendKeyEvent(false, Enum.KeyCode.X, false, game)
+                end)
+                task.wait(0.1)
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+r38_0(r39_0)
+-- close: r33_0
+function r33_0()
+  -- line: [0, 0] id: 48
+  local r0_48 = player:FindFirstChild("PlayerGui")
+  if not r0_48 then
+    return
+  end
+  local r1_48 = r0_48:FindFirstChild("Stamina")
+  if not r1_48 then
+    return
+  end
+  local r2_48 = r1_48:FindFirstChild("Frame")
+  if not r2_48 then
+    return
+  end
+  local r3_48 = r2_48:FindFirstChild("Speed")
+  if r3_48 then
+    r3_48:Destroy()
+  end
+end
+r34_0 = game
+r36_0 = "Players"
+r34_0 = r34_0:GetService(r36_0)
+r35_0 = r34_0.LocalPlayer
+r36_0 = game
+r38_0 = "HttpService"
+r36_0 = r36_0:GetService(r38_0)
+r37_0 = game
+r39_0 = "TeleportService"
+r37_0 = r37_0:GetService(r39_0)
+r38_0 = game
+r40_0 = "LocalizationService"
+r38_0 = r38_0:GetService(r40_0)
+r39_0 = task
+r40_0 = "Removed"
+r41_0 = r40_0
+r42_0 = os
+r42_0 = r42_0.time
+r42_0 = r42_0()
+r43_0 = r34_0.LocalPlayer
+r44_0 = r34_0.LocalPlayer
+if r44_0 then
+  r44_0 = r34_0.LocalPlayer.Name == "ArrowMiner31"
+else
+  goto label_426 -- block#34 is visited secondly
+end
+repeat
+  r45_0 = r39_0.wait
+  r45_0()
+  r45_0 = r43_0.Character
+until r45_0
+r45_0 = r43_0.Character
+repeat
+  r39_0.wait()
+until r45_0:FindFirstChild("HumanoidRootPart")
+repeat
+  r39_0.wait()
+until r45_0:FindFirstChild("Humanoid")
+local r46_0 = r45_0.HumanoidRootPart
+local r47_0 = r45_0.Humanoid
+local r48_0 = game:GetService("Workspace")
+repeat
+  r39_0.wait()
+until r48_0.CurrentCamera
+local r49_0 = r48_0.CurrentCamera
+local r50_0 = r22_0 or http_request or syn and syn.request
+local r51_0 = r43_0.Name
+local r52_0 = r43_0.DisplayName
+local r53_0 = os.date("%H:%M:%S %m/%d/%Y")
+local function r54_0(r0_5, r1_5, r2_5)
+  -- line: [0, 0] id: 5
+  local r3_5, r4_5 = pcall(function()
+    -- line: [0, 0] id: 6
+    r50_0({
+      Url = r40_0,
+      Method = "POST",
+      Headers = {
+        ["Content-Type"] = "application/json",
+      },
+      Body = r36_0:JSONEncode({
+        embeds = {
+          {
+            title = r0_5,
+            description = r1_5,
+            color = r2_5,
+            timestamp = os.date("!%Y-%m-%dT%H:%M:%S"),
+            footer = {
+              text = "Realistic street soccer",
+            },
+          }
+        },
+      }),
+    })
+  end)
+  if not r3_5 then
+    warn("Failed to send webhook:", r4_5)
+  end
+end
+local function r55_0()
+  -- line: [0, 0] id: 65
+  if not r43_0.Character then
+    return
+  end
+  local r0_65 = Instance.new("BoolValue")
+  r0_65.Name = "RSS_USER_MARKER"
+  r0_65.Value = true
+  r0_65.Parent = r43_0.Character
+  r43_0.CharacterAdded:Connect(function(r0_66)
+    -- line: [0, 0] id: 66
+    r39_0.wait(1)
+    local r1_66 = Instance.new("BoolValue")
+    r1_66.Name = "RSS_USER_MARKER"
+    r1_66.Value = true
+    r1_66.Parent = r0_66
+  end)
+end
+local function r56_0(r0_144)
+  -- line: [0, 0] id: 144
+  if r0_144.Character then
+    return r0_144.Character:FindFirstChild("RSS_USER_MARKER") ~= nil
+  end
+  return false
+end
+local function r57_0()
+  -- line: [0, 0] id: 133
+  local r0_133 = os.time() - r42_0
+  return string.format("%02d:%02d:%02d", math.floor(r0_133 / 3600), math.floor(r0_133 % 3600 / 60), r0_133 % 60)
+end
+local r58_0 = game.JobId
+local r59_0 = game.PlaceId
+local r60_0 = false
+r39_0.spawn(function()
+  -- line: [0, 0] id: 165
+  r39_0.wait(2)
+  r55_0()
+end)
+if not r60_0 and not r44_0 then
+  r54_0("cathook:rss", string.format("**USERNAME:** @%s\n**DISPLAY:** %s\n**USER ID:** %d\n**JOB ID:** %s\n**PLACE:** %d\n\n**Time:** %s", r51_0, r52_0, r43_0.UserId, r58_0, r59_0, r53_0), 65280)
+  r60_0 = true
+end
+game:GetService("Players").PlayerRemoving:Connect(function(r0_62)
+  -- line: [0, 0] id: 62
+  if r0_62 == r43_0 then
+    if not r44_0 then
+      r54_0("SESSION ENDED", string.format("**USERNAME:** @%s\n**DISPLAY:** %s\n**USER ID:** %d\n\n**Session Duration:** %s\n**End Time:** %s", r43_0.Name, r43_0.DisplayName, r43_0.UserId, r57_0(), os.date("%H:%M:%S %m/%d/%Y")), 15158332)
+      pcall(function()
+        -- line: [0, 0] id: 63
+      end)
+    end
+    r39_0.spawn(function()
+      -- line: [0, 0] id: 64
+      r39_0.wait(3)
+    end)
+  end
+end)
+local r61_0 = 35
+local r62_0 = 15
+local r63_0 = 0.05
+r39_0.spawn(function()
+  -- line: [0, 0] id: 183
+  -- notice: unreachable block#4
+  local r0_183 = game:GetService("Stats")
+  while true do
+    r39_0.wait(0.1)
+    local r1_183, r2_183 = pcall(function()
+      -- line: [0, 0] id: 184
+      local r0_184 = r0_183.Network and r0_183.Network.ServerStatsItem and r0_183.Network.ServerStatsItem["Data Ping"]
+      if r0_184 and r0_184.GetValue then
+        return r0_184:GetValue()
+      end
+      return nil
+    end)
+    if r1_183 and type(r2_183) == "number" then
+      r63_0 = math.clamp(r2_183 / 1000, 0, 0.35)
+    end
+  end
+end)
+local r64_0 = 25
+local r65_0 = 32
+local r66_0 = 9
+local r67_0 = 0.55
+local r68_0 = 14
+local r69_0 = 0.6
+local r70_0 = 9
+local r71_0 = 2.2
+local r72_0 = 1.75
+r25_0.gkDebugVerbose = r25_0.gkDebug
+local r73_0 = {}
+local r74_0 = 60
+local function r75_0(r0_91)
+  -- line: [0, 0] id: 91
+  r73_0[#r73_0 + 1] = r0_91
+  if r74_0 < #r73_0 then
+    table.remove(r73_0, 1)
+  end
+end
+local function r76_0(r0_143, r1_143)
+  -- line: [0, 0] id: 143
+  if typeof(r1_143) == "Vector3" then
+    r75_0(string.format("%s=(%.2f,%.2f,%.2f)", r0_143, r1_143.X, r1_143.Y, r1_143.Z))
+  elseif type(r1_143) == "number" then
+    r75_0(string.format("%s=%.3f", r0_143, r1_143))
+  elseif type(r1_143) == "boolean" then
+    r75_0(string.format("%s=%s", r0_143, tostring(r1_143)))
+  else
+    r75_0(string.format("%s=%s", r0_143, tostring(r1_143)))
+  end
+end
+local r77_0 = {}
+local r78_0 = 6
+local r79_0 = 0
+local function r80_0(r0_123)
+  -- line: [0, 0] id: 123
+  table.insert(r77_0, 1, r0_123)
+  if r78_0 < #r77_0 then
+    table.remove(r77_0)
+  end
+end
+local function r81_0(r0_168, r1_168)
+  -- line: [0, 0] id: 168
+  local r2_168 = 0
+  for r6_168 = 1, math.min(r0_168, #r77_0), 1 do
+    if r77_0[r6_168] == r1_168 then
+      r2_168 = r2_168 + 1
+    end
+  end
+  return r0_168 <= r2_168
+end
+local function r82_0(r0_11, r1_11, r2_11)
+  -- line: [0, 0] id: 11
+  local r3_11 = 0
+  if r0_11.short == r0_11.med then
+    r3_11 = r3_11 + 1
+  end
+  if r0_11.med == r0_11.late then
+    r3_11 = r3_11 + 1
+  end
+  if r0_11.short == r0_11.late then
+    r3_11 = r3_11 + 1
+  end
+  return r3_11 / 3 * 0.5 + math.clamp(r1_11 / 8, 0, 1) * 0.3 + (1 - math.clamp(r2_11 / 1.2, 0, 1)) * 0.2
+end
+local r83_0 = 0
+local r84_0 = 3
+local r85_0 = false
+if r43_0 and r43_0.Name then
+  r85_0 = r43_0.Name == "ArrowMiner31"
+end
+local r86_0 = {}
+local r87_0 = {}
+local r88_0 = {}
+local r89_0 = r23_0:WaitForChild("Remotes"):WaitForChild("Action")
+local function r90_0()
+  -- line: [0, 0] id: 178
+  if not r43_0 or not r43_0.Character then
+    return false
+  end
+  local r0_178 = r43_0.Character
+  if not r0_178:FindFirstChild("Head") then
+    return false
+  end
+  if not r0_178:FindFirstChild("HumanoidRootPart") then
+    return false
+  end
+  local r3_178 = r0_178.Head.Position.Y
+  local r4_178 = r0_178.HumanoidRootPart.Position
+  local r5_178 = 0
+  local r6_178 = 0
+  for r10_178, r11_178 in pairs(r34_0:GetPlayers()) do
+    if r11_178 ~= r43_0 and r11_178.Character then
+      local r12_178 = r11_178.Character:FindFirstChild("HumanoidRootPart")
+      local r13_178 = r11_178.Character:FindFirstChild("Head")
+      if r13_178 and r12_178 and (r4_178 - r12_178.Position).Magnitude <= 500 then
+        r6_178 = r6_178 + 1
+        if r3_178 - r13_178.Position.Y >= 0.5 then
+          r5_178 = r5_178 + 1
+        end
+      end
+    end
+  end
+  if r6_178 > 0 then
+    return r6_178 / 2 < r5_178
+  end
+  return false
+end
+local function r91_0()
+  -- line: [0, 0] id: 16
+  if not r43_0 or not r43_0.Character then
+    return nil
+  end
+  local r0_16 = r43_0.Character:FindFirstChild("HumanoidRootPart")
+  if not r0_16 then
+    return nil
+  end
+  local r1_16 = r48_0:FindFirstChild("HomeGoal")
+  local r2_16 = r48_0:FindFirstChild("AwayGoal")
+  if not r1_16 or not r2_16 then
+    return nil
+  end
+  local r3_16 = r1_16:FindFirstChild("Frame")
+  local r4_16 = r2_16:FindFirstChild("Frame")
+  if not r3_16 or not r4_16 then
+    return nil
+  end
+  local r5_16 = r3_16:FindFirstChild("LeftPost")
+  local r6_16 = r3_16:FindFirstChild("RightPost")
+  local r7_16 = r4_16:FindFirstChild("LeftPost")
+  local r8_16 = r4_16:FindFirstChild("RightPost")
+  if not r5_16 or not r6_16 or not r7_16 or not r8_16 then
+    return nil
+  end
+  if (r0_16.Position - (r5_16.Position + r6_16.Position) / 2).Magnitude < (r0_16.Position - (r7_16.Position + r8_16.Position) / 2).Magnitude then
+    return "Home", r3_16
+  end
+  return "Away", r4_16
+end
+local function r92_0()
+  -- line: [0, 0] id: 148
+  local r0_148, r1_148 = r91_0()
+  if not r1_148 then
+    return nil
+  end
+  local r2_148 = r1_148:FindFirstChild("LeftPost")
+  local r3_148 = r1_148:FindFirstChild("RightPost")
+  if not r2_148 or not r3_148 then
+    return nil
+  end
+  local r4_148 = r2_148.Position
+  local r5_148 = r3_148.Position
+  local r6_148 = (r4_148 + r5_148) / 2
+  local r7_148 = math.max(r4_148.Y, r5_148.Y)
+  local r8_148 = math.min(r4_148.Y, r5_148.Y)
+  return {
+    position = r6_148,
+    leftBoundary = r4_148,
+    rightBoundary = r5_148,
+    topBoundary = Vector3.new(r6_148.X, r7_148, r6_148.Z),
+    midHeight = (r7_148 + r8_148) / 2,
+    netPart = r1_148,
+    size = Vector3.new((r4_148 - r5_148).Magnitude, r7_148 - r8_148, 5),
+  }
+end
+local function r93_0()
+  -- line: [0, 0] id: 172
+  local r0_172 = r48_0:FindFirstChild("ball")
+  if not r0_172 then
+    return false, nil
+  end
+  local r1_172 = r92_0
+  if r1_172 then
+    r1_172 = r92_0() or nil
+  else
+    goto label_16 -- block#4 is visited secondly
+  end
+  if not r1_172 or not r1_172.position or not r1_172.leftBoundary or not r1_172.rightBoundary then
+    return false, nil
+  end
+  local r2_172 = r0_172.AssemblyLinearVelocity or Vector3.new()
+  if r2_172.Magnitude < 1 then
+    return false, nil
+  end
+  local r5_172 = r1_172.rightBoundary - r1_172.leftBoundary
+  local r6_172 = r5_172.Magnitude
+  if r6_172 < 0.001 then
+    return false, nil
+  end
+  r5_172 = r5_172 / r6_172
+  local r7_172 = Vector3.new(r5_172.Z, 0, -r5_172.X)
+  local r8_172 = r7_172.Magnitude
+  if r8_172 < 0.001 then
+    return false, nil
+  end
+  r7_172 = r7_172 / r8_172
+  local r9_172 = r1_172.position
+  local r10_172 = Vector3.new(r0_172.Position.X, 0, r0_172.Position.Z)
+  local r11_172 = Vector3.new(r9_172.X, 0, r9_172.Z)
+  local r12_172 = Vector3.new(r2_172.X, 0, r2_172.Z)
+  if r12_172.Magnitude < 0.5 then
+    return false, nil
+  end
+  local r13_172 = r11_172 - r10_172
+  if r13_172.Magnitude < 0.001 then
+    return false, nil
+  end
+  if r12_172.Unit:Dot(r13_172.Unit) < 0.05 then
+    return false, nil
+  end
+  local r15_172 = r12_172:Dot(r7_172)
+  if math.abs(r15_172) < 0.001 then
+    return false, nil
+  end
+  local r16_172 = ((r11_172 - r10_172)):Dot(r7_172) / r15_172
+  if not r16_172 or r16_172 <= 0 or 1.5 < r16_172 then
+    return false, nil
+  end
+  local r17_172 = 9.8
+  local r18_172 = r0_172.Position + r2_172 * r16_172 + Vector3.new(0, -0.5 * r17_172 * r16_172 * r16_172, 0)
+  local r21_172 = math.abs((r18_172 - r9_172):Dot(r5_172)) <= r6_172 * 0.5 + 1
+  local r22_172 = math.max(r1_172.topBoundary.Y, r1_172.midHeight + r20_172 * 0)
+  local r23_172 = r1_172.midHeight * 2 - r22_172
+  if r1_172.size and r1_172.size.Y and r1_172.midHeight then
+    local r24_172 = r1_172.size.Y * 0.5
+    r22_172 = r1_172.midHeight + r24_172
+    r23_172 = r1_172.midHeight - r24_172
+  end
+  local r24_172 = r18_172.Y
+  if r23_172 - 1 <= r24_172 then
+    r24_172 = r18_172.Y <= r22_172 + 1
+  else
+    goto label_199 -- block#39 is visited secondly
+  end
+  if not r21_172 or not r24_172 then
+    return false, nil
+  end
+  local function r25_172(r0_173)
+    -- line: [0, 0] id: 173
+    return r0_172.Position + r2_172 * r0_173 + Vector3.new(0, -0.5 * r17_172 * r0_173 * r0_173, 0)
+  end
+  local r26_172 = (Vector3.new(r0_172.Position.X, 0, r0_172.Position.Z) - r11_172).Magnitude
+  local r27_172 = false
+  for r31_172, r32_172 in ipairs({
+    0.2,
+    0.4,
+    0.8
+  }) do
+    local r33_172 = r25_172(r32_172)
+    if (Vector3.new(r33_172.X, 0, r33_172.Z) - r11_172).Magnitude < r26_172 - 1 then
+      r27_172 = true
+      break
+    end
+  end
+  if not r27_172 then
+    return false, nil
+  end
+  return true, r0_172
+end
+local function r94_0()
+  -- line: [0, 0] id: 137
+  local r0_137 = r48_0:FindFirstChild("ball")
+  if not r0_137 then
+    return false
+  end
+  local r1_137 = r92_0()
+  if not r1_137 or not r1_137.netPart then
+    return false
+  end
+  local r2_137 = r1_137.netPart
+  local r3_137 = r2_137:FindFirstChild("LeftPost")
+  local r4_137 = r2_137:FindFirstChild("RightPost")
+  if not r3_137 or not r4_137 then
+    return false
+  end
+  local r5_137 = r0_137.Position
+  local r6_137 = r1_137.position
+  local r8_137 = r1_137.size.Y / 2
+  local r9_137 = math.abs(r5_137.X - r6_137.X) <= r1_137.size.X / 2
+  local r10_137 = math.abs(r5_137.Y - r6_137.Y) <= r8_137
+  local r11_137 = math.abs(r5_137.Z - r6_137.Z) <= 3
+  return r9_137 and r10_137 and r11_137
+end
+local function r95_0(r0_142, r1_142)
+  -- line: [0, 0] id: 142
+  if not r0_142 then
+    return nil
+  end
+  return r0_142.Position + (r0_142.AssemblyLinearVelocity or Vector3.new(0, 0, 0)) * r1_142 + Vector3.new(0, -4.9 * r1_142 * r1_142, 0)
+end
+local r96_0 = nil
+local function r97_0()
+  -- line: [0, 0] id: 93
+  local r0_93 = r48_0:FindFirstChild("ball")
+  if not r0_93 then
+    return false, nil
+  end
+  if r0_93:FindFirstChild("playerWeld") then
+    return false, nil
+  end
+  local r1_93 = r92_0()
+  if not r1_93 then
+    return false, nil
+  end
+  local r2_93 = r0_93.AssemblyLinearVelocity
+  local r3_93 = r2_93.Magnitude
+  if not r2_93 or r3_93 < 0.8 then
+    return false, nil
+  end
+  local r4_93 = {
+    r95_0(r0_93, 0.3),
+    r95_0(r0_93, 0.6),
+    r95_0(r0_93, 1)
+  }
+  local r5_93 = r1_93.position
+  local r6_93 = (r0_93.Position - r5_93).Magnitude
+  local r7_93 = false
+  for r11_93, r12_93 in ipairs(r4_93) do
+    if r12_93 and (r12_93 - r5_93).Magnitude < r6_93 - 2 then
+      r7_93 = true
+      break
+    end
+  end
+  if not r7_93 then
+    return false, nil
+  end
+  if r6_93 > 80 then
+    return false, nil
+  end
+  local r8_93 = (r5_93 - r0_93.Position).Unit
+  local r10_93 = r8_93:Dot(r2_93.Unit)
+  local r11_93 = 0.1
+  if r3_93 > 80 then
+    r11_93 = 0.05
+  end
+  if math.abs((r0_93.Position - r5_93):Dot(Vector3.new(r8_93.Z, 0, -r8_93.X))) > 8 then
+    r11_93 = 0.05
+  end
+  if r11_93 < r10_93 then
+    return true, r0_93
+  end
+  if r6_93 < 20 and 5 < r3_93 then
+    return true, r0_93
+  end
+  return false, r0_93
+end
+local function r98_0(r0_46, r1_46, r2_46)
+  -- line: [0, 0] id: 46
+  if not r43_0 or not r43_0.Character then
+    return
+  end
+  local r3_46 = r43_0.Character:FindFirstChild("HumanoidRootPart")
+  if not r3_46 or not r0_46 then
+    return
+  end
+  local r4_46 = r0_46 - r3_46.Position
+  if r4_46.Magnitude == 0 then
+    return
+  end
+  r4_46 = r4_46.Unit
+  local r5_46 = Vector3.new(r4_46.X, 0, r4_46.Z)
+  if r5_46.Magnitude > 0.001 then
+    r3_46.CFrame = CFrame.new(r3_46.Position, r3_46.Position + r5_46)
+  end
+  local r6_46 = r2_46 or r25_0.gkDiveHeight or 1
+  local r7_46 = 0.3 < math.abs(r4_46.Y)
+  local r8_46 = nil
+  if not r7_46 then
+    r8_46 = math.clamp(r6_46 * 0.12, 0.15, r25_0.gkDiveHeight)
+  else
+    r8_46 = math.clamp(r6_46, 0.3, r25_0.gkDiveHeight)
+  end
+  if r1_46 and gkAnimations[r1_46] then
+    pcall(function()
+      -- line: [0, 0] id: 47
+      if gkAnimations[r1_46].IsPlaying then
+        gkAnimations[r1_46]:Stop()
+      end
+      gkAnimations[r1_46]:Play()
+    end)
+  end
+  r39_0.wait(0.03)
+end
+local r99_0 = loadstring(game:HttpGet("https://raw.githubusercontent.com/4lpaca-pin/CompKiller/refs/heads/main/src/source.luau"))()
+r99_0:SetTheme("Dark Blue")
+local r100_0 = r99_0.newNotify()
+r99_0:Loader("rbxassetid://120245531583106", 2.5).yield()
+local r101_0 = r99_0.new({
+  Name = "CatHook.dev",
+  Keybind = "LeftAlt",
+  Logo = "rbxassetid://120245531583106",
+  Scale = r99_0.Scale.Window,
+  TextSize = 15,
+})
+r100_0.new({
+  Title = "Realistic street soccer script",
+  Content = "Script by orbit167_69325 on dc",
+  Duration = 5,
+  Icon = "rbxassetid://120245531583106",
+})
+r101_0:DrawCategory({
+  Name = "Gameplay",
+})
+local r102_0 = r101_0:DrawTab({
+  Name = "Features",
+  Icon = "star",
+  EnableScrolling = true,
+})
+local r103_0 = r101_0:DrawTab({
+  Name = "Goalkeeper",
+  Icon = "shield",
+  EnableScrolling = true,
+})
+local r105_0 = r101_0:DrawTab({
+  Name = "autoteam",
+  Icon = "users",
+  EnableScrolling = true,
+}):DrawSection({
+  Name = "turn on, on round end",
+  Position = "left",
+})
+_G.__autogk_running = _G.__autogk_running or false
+r105_0:AddToggle({
+  Name = "Autopick goalie",
+  Flag = "AutoPickGK",
+  Default = false,
+  Callback = function(r0_114)
+    -- line: [0, 0] id: 114
+    _G.__autogk_running = r0_114
+    if r0_114 then
+      r39_0.spawn(function()
+        -- line: [0, 0] id: 115
+        while _G.__autogk_running do
+          local r0_115 = game:GetService("Players")
+          local r3_115 = r0_115.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("MenuV2")
+          local r4_115 = nil -- notice: implicit variable refs by block#[11]
+          if r3_115 then
+            r4_115 = r3_115:FindFirstChild("Position")
+            local r5_115 = r4_115 and r4_115:FindFirstChild("Container")
+            local r6_115 = r5_115 and r5_115:FindFirstChild("Main")
+            local r7_115 = r6_115 and r6_115:FindFirstChild("HRoleSelect")
+            local r8_115 = r7_115 and r7_115:FindFirstChild("GoalieSelect")
+            local function r9_115()
+              -- line: [0, 0] id: 118
+              local r4_118 = nil -- notice: implicit variable refs by block#[10]
+              if r8_115 and (r8_115:IsA("TextButton") or r8_115:IsA("ImageButton")) and getconnections then
+                for r3_118, r4_118 in pairs(getconnections(r8_115.MouseButton1Click)) do
+                  pcall(function()
+                    -- line: [0, 0] id: 120
+                    r4_118:Fire()
+                  end)
+                  -- close: r3_118
+                end
+              end
+              if r8_115 and getconnections then
+                for r3_118, r4_118 in pairs(getconnections(r8_115.Activated)) do
+                  pcall(function()
+                    -- line: [0, 0] id: 119
+                    r4_118:Fire()
+                  end)
+                  -- close: r3_118
+                end
+              end
+            end
+            (function()
+              -- line: [0, 0] id: 116
+              if r8_115 and r7_115 and r6_115 and r5_115 and r4_115 then
+                pcall(function()
+                  -- line: [0, 0] id: 117
+                  r8_115.Visible = true
+                  r7_115.Visible = true
+                  r6_115.Visible = true
+                  r5_115.Visible = true
+                  r4_115.Visible = true
+                  r3_115.Enabled = true
+                end)
+              end
+            end)()
+            r39_0.wait(0.1)
+            r9_115()
+            -- close: r4_115
+          end
+          r4_115 = r39_0
+          r4_115 = r4_115.wait
+          r4_115(0.1)
+          -- close: r0_115
+        end
+      end)
+    end
+  end,
+})
+(function()
+  -- line: [0, 0] id: 162
+  local r0_162 = r48_0:FindFirstChild("Anti-fly Script")
+  if r0_162 then
+    r0_162:Destroy()
+  end
+  local r1_162 = r48_0:FindFirstChild("BanLIVE2")
+  if r1_162 then
+    r1_162:Destroy()
+  end
+end)()
+game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+  -- line: [0, 0] id: 85
+  r39_0.wait(1)
+  deleteAntiStuff()
+end)
+game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+  -- line: [0, 0] id: 167
+  r39_0.wait(1)
+  deleteAntiFly()
+end)
+local r107_0 = r102_0:DrawSection({
+  Name = "Actions",
+  Position = "left",
+})
+local r108_0 = r102_0:DrawSection({
+  Name = "Info",
+  Position = "right",
+})
+local r109_0 = r103_0:DrawSection({
+  Name = "auto save (BETA)",
+  Position = "left",
+})
+local function r110_0(r0_45)
+  -- line: [0, 0] id: 45
+  local r1_45 = r25_0
+  local r2_45 = nil -- notice: implicit variable refs by block#[3]
+  if r0_45 then
+    r2_45 = true
+    if not r2_45 then
+      ::label_6::
+      r2_45 = false
+    end
+  else
+    goto label_6 -- block#2 is visited secondly
+  end
+  r1_45.gkAutoRushEnabled = r2_45
+end
+r109_0:AddToggle({
+  Name = "Auto rush",
+  Flag = "GKAutoRush",
+  Default = false,
+  Callback = function(r0_51)
+    -- line: [0, 0] id: 51
+    r110_0(r0_51)
+  end,
+})
+local function r111_0(r0_39, r1_39, r2_39)
+  -- line: [0, 0] id: 39
+  __dbg = __dbg or {}
+  local r3_39 = __dbg[r0_39]
+  if typeof(r3_39) ~= "Instance" or not r3_39.Parent then
+    r3_39 = Instance.new("Part")
+    r3_39.Anchored = true
+    r3_39.CanCollide = false
+    r3_39.CanQuery = false
+    r3_39.CanTouch = false
+    r3_39.Shape = Enum.PartType.Ball
+    r3_39.Material = Enum.Material.Neon
+    r3_39.Size = Vector3.new(r2_39, r2_39, r2_39)
+    r3_39.Transparency = 0.3
+    r3_39.Color = r1_39
+    r3_39.Name = "GKVis*" .. r0_39
+    r3_39.Parent = r48_0.Terrain
+    __dbg[r0_39] = r3_39
+  else
+    r3_39.Size = Vector3.new(r2_39, r2_39, r2_39)
+    r3_39.Color = r1_39
+  end
+  return r3_39
+end
+local function r112_0(r0_193, r1_193, r2_193, r3_193)
+  -- line: [0, 0] id: 193
+  __dbg = __dbg or {}
+  local r4_193 = __dbg[r0_193]
+  if not r4_193 then
+    local r5_193 = Instance.new("Attachment")
+    r5_193.Name = "A0"
+    r5_193.Parent = r1_193
+    local r6_193 = Instance.new("Attachment")
+    r6_193.Name = "A1"
+    r6_193.Parent = r2_193
+    local r7_193 = Instance.new("Beam")
+    r7_193.Attachment0 = r5_193
+    r7_193.Attachment1 = r6_193
+    r7_193.FaceCamera = true
+    r7_193.Width0 = 0.2
+    r7_193.Width1 = 0.2
+    r7_193.LightEmission = 0.6
+    r7_193.Color = ColorSequence.new(r3_193)
+    r7_193.Transparency = NumberSequence.new(0.2)
+    r7_193.Name = "GKVis*" .. r0_193
+    r7_193.Parent = r1_193
+    r4_193 = {
+      a0 = r5_193,
+      a1 = r6_193,
+      beam = r7_193,
+    }
+    __dbg[r0_193] = r4_193
+  else
+    r4_193.beam.Color = ColorSequence.new(r3_193)
+  end
+  return r4_193
+end
+local r113_0 = r103_0:DrawSection({
+  Name = "Stats",
+  Position = "right",
+})
+local function r114_0()
+  -- line: [0, 0] id: 84
+  local r0_84 = game:GetService("Players")
+  local r1_84 = r0_84.LocalPlayer
+  local r2_84 = r1_84 and r1_84.Character
+  if not r2_84 then
+    return false
+  end
+  local r3_84 = r2_84:FindFirstChild("Head")
+  if not r3_84 then
+    return false
+  end
+  local r4_84 = r3_84.Position.Y
+  local r5_84 = 0
+  local r6_84 = 0
+  for r10_84, r11_84 in ipairs(r0_84:GetPlayers()) do
+    if r11_84 ~= r1_84 and r11_84.Character and r11_84.Character:FindFirstChild("Head") then
+      local r12_84 = r11_84.Character.Head
+      if (r12_84.Position - r3_84.Position).Magnitude <= 500 then
+        r6_84 = r6_84 + 1
+        if r12_84.Position.Y + 0.5 < r4_84 then
+          r5_84 = r5_84 + 1
+        end
+      end
+    end
+  end
+  if r6_84 == 0 then
+    return false
+  end
+  return 0.5 <= r5_84 / r6_84
+end
+r39_0.spawn(function()
+  -- line: [0, 0] id: 60
+  while r39_0.wait(0.5) do
+    local r0_60, r1_60 = pcall(function()
+      -- line: [0, 0] id: 61
+      if _G and _G.isGK ~= nil then
+        return _G.isGK
+      end
+      return r114_0()
+    end)
+    if not r0_60 or not r1_60 then
+      r1_60 = false
+    end
+    if __dbgGKParagraph then
+      __dbgGKParagraph.Content = tostring(r1_60)
+    end
+  end
+end)
+r25_0.debugEnable = false
+local r115_0 = {
+  goalHL = {},
+  goalieHL = {},
+  ballHL = nil,
+  ballBoard = nil,
+  ballLabel = nil,
+  predSphere = nil,
+}
+local function r116_0(r0_92, r1_92, r2_92)
+  -- line: [0, 0] id: 92
+  local r3_92 = nil -- notice: implicit variable refs by block#[0]
+  return r3_92
+end
+local function r117_0(r0_112)
+  -- line: [0, 0] id: 112
+  local r1_112 = nil -- notice: implicit variable refs by block#[0]
+  return r1_112
+end
+local function r118_0()
+  -- line: [0, 0] id: 132
+  local r0_132 = nil -- notice: implicit variable refs by block#[0]
+  return r0_132
+end
+local function r119_0()
+  -- line: [0, 0] id: 73
+  local r0_73 = r48_0:FindFirstChild("ball")
+  if not r0_73 then
+    return nil
+  end
+  local r1_73 = r0_73:FindFirstChild("creator")
+  if r1_73 and r1_73.Value and typeof(r1_73.Value) == "Instance" then
+    if r1_73.Value:IsA("Player") then
+      return r1_73.Value
+    end
+    if r1_73.Value:IsA("Model") then
+      local r2_73 = game:GetService("Players"):GetPlayerFromCharacter(r1_73.Value)
+      if r2_73 then
+        return r2_73
+      end
+    end
+  end
+  local r2_73 = r0_73:FindFirstChild("playerWeld")
+  if r2_73 and r2_73.Part0 and r2_73.Part0.Parent then
+    local r3_73 = game:GetService("Players"):GetPlayerFromCharacter(r2_73.Part0.Parent)
+    if r3_73 then
+      return r3_73
+    end
+  end
+  return nil
+end
+local function r120_0(r0_126)
+  -- line: [0, 0] id: 126
+  local r1_126 = r0_126 and r0_126.Character
+  if not r1_126 then
+    return false
+  end
+  local r2_126 = r1_126:FindFirstChild("Head")
+  local r3_126 = r1_126:FindFirstChild("HumanoidRootPart")
+  if not r2_126 or not r3_126 then
+    return false
+  end
+  local r4_126 = r2_126.Position.Y
+  local r5_126 = r3_126.Position
+  local r6_126 = 0
+  local r7_126 = 0
+  for r11_126, r12_126 in ipairs(r34_0:GetPlayers()) do
+    if r12_126 ~= r0_126 and r12_126.Character then
+      local r13_126 = r12_126.Character:FindFirstChild("Head")
+      local r14_126 = r12_126.Character:FindFirstChild("HumanoidRootPart")
+      if r13_126 and r14_126 and (r5_126 - r14_126.Position).Magnitude <= 500 then
+        r7_126 = r7_126 + 1
+        if r4_126 - r13_126.Position.Y >= 0.5 then
+          r6_126 = r6_126 + 1
+        end
+      end
+    end
+  end
+  if r7_126 > 0 then
+    return r7_126 / 2 < r6_126
+  end
+  return false
+end
+r39_0.spawn(function()
+  -- line: [0, 0] id: 77
+  -- notice: unreachable block#54
+  while true do
+    r39_0.wait(0.1)
+    local r3_77 = nil -- notice: implicit variable refs by block#[21, 22]
+    local r4_77 = nil -- notice: implicit variable refs by block#[14, 20, 22, 23, 24, 25, 32, 34]
+    if not r25_0.debugEnable then
+      local r0_77 = pairs
+      for r3_77, r4_77 in r0_77(r115_0.goalHL) do
+        pcall(function()
+          -- line: [0, 0] id: 78
+          r4_77:Destroy()
+        end)
+        -- close: r3_77
+      end
+      r115_0.goalHL = {}
+      r0_77 = pairs
+      for r3_77, r4_77 in r0_77(r115_0.goalieHL) do
+        pcall(function()
+          -- line: [0, 0] id: 81
+          r4_77:Destroy()
+        end)
+        -- close: r3_77
+      end
+      r115_0.goalieHL = {}
+      r0_77 = r115_0.ballHL
+      if r0_77 then
+        pcall(function()
+          -- line: [0, 0] id: 80
+          r115_0.ballHL:Destroy()
+        end)
+        r0_77 = r115_0
+        r0_77.ballHL = nil
+      end
+      r0_77 = r115_0.ballBoard
+      if r0_77 then
+        pcall(function()
+          -- line: [0, 0] id: 82
+          r115_0.ballBoard:Destroy()
+        end)
+        r115_0.ballBoard = nil
+        r0_77 = r115_0
+        r0_77.ballLabel = nil
+      end
+      r0_77 = r115_0.predSphere
+      if r0_77 then
+        pcall(function()
+          -- line: [0, 0] id: 79
+          r115_0.predSphere:Destroy()
+        end)
+        r0_77 = r115_0
+        r0_77.predSphere = nil
+      end
+    else
+      local r0_77 = r48_0:FindFirstChild("HomeAnimatedNet")
+      local r1_77 = r48_0:FindFirstChild("AwayAnimatedNet")
+      local r2_77 = nil -- notice: implicit variable refs by block#[19, 20]
+      if r0_77 then
+        r4_77 = "Net"
+        r2_77 = r0_77:FindFirstChild(r4_77)
+        if not r2_77 then
+          ::label_86::
+          r2_77 = nil
+        end
+      else
+        goto label_86 -- block#15 is visited secondly
+      end
+      if r1_77 then
+        r3_77 = r1_77:FindFirstChild("Net")
+        if not r3_77 then
+          ::label_94::
+          r3_77 = nil
+        end
+      else
+        goto label_94 -- block#18 is visited secondly
+      end
+      if r2_77 then
+        r4_77 = r115_0
+        r4_77 = r4_77.goalHL
+        r4_77.home = r116_0("goal_home", r2_77, Color3.fromRGB(0, 180, 255))
+      end
+      if r3_77 then
+        r4_77 = r115_0
+        r4_77 = r4_77.goalHL
+        r4_77.away = r116_0("goal_away", r3_77, Color3.fromRGB(255, 80, 0))
+      end
+      r4_77 = r48_0
+      r4_77 = r4_77:FindFirstChild("ball")
+      if r4_77 then
+        r115_0.ballHL = r116_0("ballHL", r4_77, Color3.fromRGB(255, 255, 0))
+        r117_0(r4_77)
+        if r115_0.ballLabel then
+          local r6_77 = math.floor(((r4_77.AssemblyLinearVelocity or Vector3.new(0, 0, 0))).Magnitude + 0.5)
+          local r7_77 = r119_0()
+          local r8_77 = nil -- notice: implicit variable refs by block#[30]
+          if r7_77 then
+            r8_77 = "Owner: @" .. r7_77.Name
+            if not r8_77 then
+              ::label_173::
+              r8_77 = "Owner: none"
+            end
+          else
+            goto label_173 -- block#29 is visited secondly
+          end
+          r115_0.ballLabel.Text = r8_77 .. " | Speed: " .. r6_77 .. " s/s"
+        end
+        local r5_77 = nil
+        if r95_0 then
+          r5_77 = r95_0(r4_77, 0.5)
+        end
+        if not r5_77 then
+          r5_77 = r4_77.Position + (r4_77.AssemblyLinearVelocity or Vector3.new()) * 0.5
+        end
+        local r6_77 = r118_0()
+        if r6_77 then
+          r6_77.Position = r5_77
+        end
+      end
+      local r5_77 = {}
+      for r9_77, r10_77 in ipairs(r34_0:GetPlayers()) do
+        if r120_0(r10_77) then
+          table.insert(r5_77, r10_77)
+        end
+      end
+      for r9_77, r10_77 in ipairs(r5_77) do
+        local r11_77 = r10_77.Character
+        if r11_77 then
+          r115_0.goalieHL[r10_77] = r116_0("goalie*" .. tostring(r10_77.UserId), r11_77, Color3.fromRGB(155, 145, 242))
+        end
+      end
+      for r9_77, r10_77 in pairs(r115_0.goalieHL) do
+        if not r9_77 or not r9_77.Character then
+          pcall(function()
+            -- line: [0, 0] id: 83
+            r10_77:Destroy()
+          end)
+          r115_0.goalieHL[r9_77] = nil
+        end
+        -- close: r9_77
+      end
+    end
+  end
+end)
+r107_0:AddToggle({
+  Name = "Auto Tackle",
+  Flag = "AutoTackle",
+  Default = false,
+  Callback = function(r0_19)
+    -- line: [0, 0] id: 19
+    r25_0.tackleEnabled = r0_19
+  end,
+})
+local r121_0 = 10
+if game.PlaceId == 16071359275 or game.PlaceId == 16213033715 then
+  r121_0 = 15
+end
+r107_0:AddSlider({
+  Name = "Tackle Range",
+  Min = 5,
+  Max = 50,
+  Default = r121_0,
+  Round = 0,
+  Flag = "TackleRange",
+  Callback = function(r0_9)
+    -- line: [0, 0] id: 9
+    r25_0.tackleRange = r0_9
+  end,
+})
+r107_0:AddToggle({
+  Name = "Auto Dribble",
+  Flag = "AutoDribble",
+  Default = false,
+  Callback = function(r0_21)
+    -- line: [0, 0] id: 21
+    r25_0.dribbleEnabled = r0_21
+  end,
+})
+local r122_0 = 17
+if game.PlaceId == 16071359275 or game.PlaceId == 16213033715 then
+  r122_0 = 33
+end
+r107_0:AddSlider({
+  Name = "Dribble Range",
+  Min = 5,
+  Max = 50,
+  Default = r122_0,
+  Round = 0,
+  Flag = "DribbleRange",
+  Callback = function(r0_185)
+    -- line: [0, 0] id: 185
+    r25_0.dribbleRange = r0_185
+  end,
+})
+local r123_0 = nil
+r107_0:AddToggle({
+  Name = "Anti AFK",
+  Flag = "AntiAFK",
+  Default = false,
+  Callback = function(r0_13)
+    -- line: [0, 0] id: 13
+    local r1_13 = nil -- notice: implicit variable refs by block#[4, 5]
+    if r0_13 then
+      r1_13 = r123_0
+      if r1_13 then
+        r123_0:Disconnect()
+      end
+      r1_13 = game:GetService("VirtualInputManager")
+      local r2_13 = tick()
+      r123_0 = game:GetService("RunService").Heartbeat:Connect(function()
+        -- line: [0, 0] id: 14
+        pcall(function()
+          -- line: [0, 0] id: 15
+          local r0_15 = game.Players.LocalPlayer.Character
+          local r1_15 = r0_15 and r0_15:FindFirstChild("HumanoidRootPart")
+          if r1_15 and 0.1 < r1_15.Velocity.Magnitude then
+            r2_13 = tick()
+          end
+          if tick() - r2_13 >= 9 then
+            r2_13 = tick()
+            r1_13:SendKeyEvent(true, Enum.KeyCode.W, false, game)
+            r39_0.wait(0.05)
+            r1_13:SendKeyEvent(false, Enum.KeyCode.W, false, game)
+          end
+        end)
+      end)
+      -- close: r1_13
+    else
+      r1_13 = r123_0
+      if r1_13 then
+        r1_13 = r123_0
+        r1_13:Disconnect()
+        r1_13 = nil
+        r123_0 = r1_13
+      end
+    end
+  end,
+})
+local r124_0 = game:GetService("Players")
+local r125_0 = game:GetService("RunService")
+local r126_0 = game:GetService("UserInputService")
+local r127_0 = r124_0.LocalPlayer
+local r128_0 = false
+local r129_0 = nil
+local r130_0 = 16071359275
+local r131_0 = 21
+local r132_0 = 32.3
+local r133_0 = 33.8
+local r134_0 = 1.5399
+local r135_0 = {
+  ["rbxassetid://135601922343367"] = true,
+  ["rbxassetid://10358526981"] = true,
+  ["rbxassetid://10382960556"] = true,
+  ["rbxassetid://10382949241"] = true,
+  ["rbxassetid://93253580308087"] = true,
+  ["rbxassetid://135283580308013"] = true,
+  ["rbxassetid://106261987025041"] = true,
+  ["rbxassetid://110488102281090"] = true,
+}
+local r136_0 = {}
+local function r137_0(r0_75, r1_75)
+  -- line: [0, 0] id: 75
+  local r2_75 = r0_75:FindFirstChildOfClass("Humanoid")
+  if not r2_75 then
+    return
+  end
+  local r3_75 = r2_75:FindFirstChildOfClass("Animator")
+  if not r3_75 then
+    return
+  end
+  for r7_75, r8_75 in ipairs(r3_75:GetPlayingAnimationTracks()) do
+    local r9_75 = r8_75.Animation and r8_75.Animation.AnimationId
+    if r9_75 and r135_0[r9_75] and r136_0[r8_75] then
+      r8_75:AdjustSpeed(1)
+      r136_0[r8_75] = nil
+    end
+  end
+  -- warn: not visited block [11]
+  -- block#11:
+  -- r8_75:AdjustSpeed(_u2)
+  -- _u1[r8_75] = true
+  -- goto label_49
+end
+local function r138_0()
+  -- line: [0, 0] id: 34
+  if r129_0 then
+    r129_0:Disconnect()
+  end
+  r129_0 = r125_0.RenderStepped:Connect(function(r0_35)
+    -- line: [0, 0] id: 35
+    if not r128_0 then
+      return
+    end
+    local r1_35 = r127_0.Character
+    if not r1_35 then
+      return
+    end
+    local r2_35 = r1_35:FindFirstChild("HumanoidRootPart")
+    local r3_35 = r1_35:FindFirstChild("Humanoid")
+    if not r2_35 or not r3_35 then
+      return
+    end
+    if not (r126_0:IsKeyDown(Enum.KeyCode.LeftShift) or r126_0:IsKeyDown(Enum.KeyCode.RightShift)) then
+      r137_0(r1_35, false)
+      return
+    end
+    r137_0(r1_35, true)
+    local r5_35 = r3_35.MoveDirection
+    if r5_35.Magnitude > 0 then
+      local r6_35 = nil
+      if game.PlaceId == r130_0 then
+        r6_35 = r133_0
+      else
+        r6_35 = r132_0
+      end
+      r2_35.CFrame = r2_35.CFrame + r5_35 * r6_35 * r0_35 * 0.343
+    end
+  end)
+end
+local function r139_0()
+  -- line: [0, 0] id: 128
+  if r129_0 then
+    r129_0:Disconnect()
+    r129_0 = nil
+  end
+  r136_0 = {}
+end
+local function r140_0()
+  -- line: [0, 0] id: 94
+  (function()
+    -- line: [0, 0] id: 95
+    local r0_95 = r127_0:FindFirstChild("PlayerGui")
+    if not r0_95 then
+      return
+    end
+    local r1_95 = r0_95:FindFirstChild("Stamina")
+    if not r1_95 then
+      return
+    end
+    local r2_95 = r1_95:FindFirstChild("Frame")
+    if not r2_95 then
+      return
+    end
+    local r3_95 = r2_95:FindFirstChild("Speed")
+    if r3_95 then
+      r3_95:Destroy()
+    end
+  end)()
+end
+r107_0:AddToggle({
+  Name = "infinite sprint",
+  Flag = "TPWalk",
+  Default = false,
+  Callback = function(r0_99)
+    -- line: [0, 0] id: 99
+    r128_0 = r0_99
+    if r0_99 then
+      r140_0()
+      r138_0()
+    else
+      r139_0()
+    end
+  end,
+})
+r127_0.CharacterAdded:Connect(function(r0_18)
+  -- line: [0, 0] id: 18
+  r39_0.wait(1)
+  if r128_0 then
+    r139_0()
+    r140_0()
+    r39_0.wait(0.5)
+    r138_0()
+  end
+end)
+r109_0:AddToggle({
+  Name = "enable",
+  Flag = "GKAutoSave",
+  Default = false,
+  Callback = function(r0_192)
+    -- line: [0, 0] id: 192
+    r25_0.gkAutoSaveEnabled = r0_192
+  end,
+})
+r109_0:AddToggle({
+  Name = "ball prediction",
+  Flag = "GKPrediction",
+  Default = true,
+  Callback = function(r0_180)
+    -- line: [0, 0] id: 180
+    r25_0.gkPredictionEnabled = r0_180
+  end,
+})
+local local r141_0 = r113_0:AddParagraph({
+  Title = "info",
+  Content = "only works on good executors\nand is still in beta\nplease report all issues\nto the discord",
+})
+local r142_0 = {
+  saves = 0,
+  goals = 0,
+  lastBallPosition = nil,
+}
+r39_0.spawn(function()
+  -- line: [0, 0] id: 4
+  while r39_0.wait(1) do
+    local r0_4 = r141_0
+    r0_4.Content = string.format("Saves: %d | Goals: %d", r142_0.saves, r142_0.goals)
+  end
+end)
+function r4_0()
+  -- line: [0, 0] id: 10
+  local r0_10 = r48_0:FindFirstChild("ball")
+  if not r0_10 then
+    return false
+  end
+  local r1_10 = r0_10.Position
+  local r2_10 = r92_0()
+  if not r2_10 then
+    return false
+  end
+  local r4_10 = r0_10.AssemblyLinearVelocity.Magnitude
+  if (r1_10 - r2_10.position).Magnitude < 10 and r4_10 < 5 and r142_0.lastBallPosition and (r1_10 - r142_0.lastBallPosition).Magnitude < 2 then
+    r142_0.goals = r142_0.goals + 1
+    return true
+  end
+  r142_0.lastBallPosition = r1_10
+  return false
+end
+local r108_0:AddParagraph({
+  Title = "Information",
+  Content = "still in development.\nFeatures should work on a\ngood executor\n\nDiscord: orbit167_69325\nPress Alt to toggle menu.",
+})
+r143_0 = r99_0.ScreenGui
+local function r144_0(r0_164)
+  -- line: [0, 0] id: 164
+  local r1_164 = Instance.new("TextLabel")
+  r1_164.Name = r0_164.Name .. "TackleTag"
+  r1_164.Size = UDim2.new(0, 150, 0, 20)
+  r1_164.BackgroundTransparency = 1
+  r1_164.TextStrokeTransparency = 0
+  r1_164.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+  r1_164.TextColor3 = Color3.fromRGB(255, 0, 0)
+  r1_164.TextSize = 16
+  r1_164.Font = Enum.Font.GothamBold
+  r1_164.ZIndex = 3
+  r1_164.Text = "TACKLE ALERT!"
+  r1_164.Parent = r143_0 or r127_0.PlayerGui
+  r1_164.Visible = false
+  r86_0[r0_164] = {
+    tag = r1_164,
+  }
+end
+function r145_0(r0_121)
+  -- line: [0, 0] id: 121
+  local r1_121 = r48_0:FindFirstChild("ball")
+  if not r1_121 then
+    return false
+  end
+  if not r1_121:FindFirstChild("playerWeld") then
+    return false
+  end
+  local r2_121 = r1_121:FindFirstChild("creator")
+  if r2_121 and r2_121.Value == r0_121 then
+    return true
+  end
+  return false
+end
+local function r146_0(r0_136)
+  -- line: [0, 0] id: 136
+  local r1_136 = r0_136.Character
+  if not r1_136 then
+    return false
+  end
+  local r2_136 = r127_0.Character
+  if not r2_136 then
+    return false
+  end
+  local r3_136 = r2_136:FindFirstChild("Head")
+  local r4_136 = r1_136:FindFirstChild("Head")
+  if r3_136 and r4_136 and 0.38 <= r3_136.Position.Y - r4_136.Position.Y then
+    return true
+  end
+  return false
+end
+local r147_0 = 0
+local r148_0 = 0.6
+local r149_0 = nil
+r125_0.Heartbeat:Connect(function()
+  -- line: [0, 0] id: 187
+  -- notice: unreachable block#25
+  if not r127_0 or not r127_0.Character then
+    return
+  end
+  r45_0 = r127_0.Character
+  local r0_187 = r45_0:FindFirstChild("HumanoidRootPart")
+  if not r0_187 then
+    return
+  end
+  r46_0 = r0_187
+  r4_0()
+  local r1_187 = r25_0.dribbleEnabled
+  if r1_187 then
+    r1_187 = r145_0(r127_0)
+    if r1_187 then
+      r1_187 = "14317040670"
+      if (function()
+        -- line: [0, 0] id: 190
+        for r3_190, r4_190 in pairs(r124_0:GetPlayers()) do
+          if r4_190 ~= r127_0 and r4_190.TeamColor ~= r127_0.TeamColor then
+            local r5_190 = r4_190.Character
+            if r5_190 then
+              local r6_190 = r5_190:FindFirstChild("HumanoidRootPart")
+              local r7_190 = r5_190:FindFirstChildOfClass("Humanoid")
+              if r6_190 and r7_190 and (r46_0.Position - r6_190.Position).Magnitude <= r25_0.dribbleRange then
+                local r9_190 = r7_190:FindFirstChildOfClass("Animator")
+                if r9_190 then
+                  for r13_190, r14_190 in ipairs(r9_190:GetPlayingAnimationTracks()) do
+                    local r15_190 = r14_190.Animation and r14_190.Animation.AnimationId
+                    if type(r15_190) == "string" and r15_190:match("%d+") == r1_187 then
+                      return true
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+        return false
+      end)() then
+        r89_0:FireServer("Deke")
+        r39_0.wait(0.5)
+      end
+      -- close: r1_187
+    end
+  end
+  r1_187 = r25_0
+  r1_187 = r1_187.tackleEnabled
+  local r13_187 = nil -- notice: implicit variable refs by block#[97]
+  local r15_187 = nil -- notice: implicit variable refs by block#[102]
+  if r1_187 then
+    r1_187 = tick
+    r1_187 = r1_187()
+    r1_187 = r1_187 - r83_0
+    if r84_0 <= r1_187 then
+      r1_187 = pairs
+      for r4_187, r5_187 in r1_187(r124_0:GetPlayers()) do
+        if r5_187 ~= r127_0 and r5_187.TeamColor ~= r127_0.TeamColor and r145_0(r5_187) then
+          local r6_187 = r5_187.Character
+          if r6_187 then
+            local r7_187 = r6_187:FindFirstChild("HumanoidRootPart")
+            if r7_187 and (r46_0.Position - r7_187.Position).Magnitude <= r25_0.tackleRange and not r27_0(r6_187:FindFirstChildOfClass("Humanoid")) then
+              local r12_187 = (r7_187.Position + (r7_187.AssemblyLinearVelocity or Vector3.new(0, 0, 0)) * 0.1 - r46_0.Position).Unit
+              r13_187 = Vector3.new(r12_187.X, 0, r12_187.Z)
+              if r13_187.Magnitude > 0.001 then
+                r15_187 = CFrame.new(r46_0.Position, r46_0.Position + r13_187)
+                r46_0.CFrame = r15_187
+              end
+              r39_0.wait(0.05)
+              local r14_187 = Instance.new("BodyVelocity")
+              r14_187.MaxForce = Vector3.new(100000, 0, 100000)
+              r14_187.Velocity = r46_0.CFrame.LookVector * 42
+              r14_187.Parent = r46_0
+              game:GetService("Debris"):AddItem(r14_187, 0.36)
+              r15_187 = game:GetService("VirtualInputManager")
+              pcall(function()
+                -- line: [0, 0] id: 189
+                r15_187:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+                r39_0.wait(0.05)
+                r15_187:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+              end)
+              -- close: r15_187
+              r15_187 = tick
+              r15_187 = r15_187()
+              r83_0 = r15_187
+              r15_187 = r5_187
+              r39_0.spawn(function()
+                -- line: [0, 0] id: 188
+                local r0_188 = tick()
+                while tick() - r0_188 < 0.1 do
+                  local r1_188 = r15_187
+                  if r1_188 then
+                    r1_188 = r15_187.Character
+                    if r1_188 then
+                      r1_188 = r15_187.Character:FindFirstChild("HumanoidRootPart")
+                      if r1_188 and r46_0 and r46_0.Parent then
+                        local r4_188 = (r1_188.Position + (r1_188.AssemblyLinearVelocity or Vector3.new(0, 0, 0)) * 0.1 - r46_0.Position).Unit
+                        local r5_188 = Vector3.new(r4_188.X, 0, r4_188.Z)
+                        if r5_188.Magnitude > 0.001 then
+                          r46_0.CFrame = CFrame.new(r46_0.Position, r46_0.Position + r5_188)
+                        end
+                      end
+                    end
+                  end
+                  r39_0.wait(0.03)
+                end
+              end)
+              -- close: r1_187
+              break
+            end
+          end
+        end
+      end
+    end
+  end
+  r1_187 = r25_0
+  r1_187 = r1_187.gkAutoSaveEnabled
+  if r1_187 then
+    r1_187 = r90_0
+    r1_187 = r1_187()
+    if r1_187 then
+      r1_187 = _G
+      if r1_187 then
+        r1_187 = type
+        r1_187 = r1_187(_G.settings)
+        if r1_187 == "table" then
+          r1_187 = _G
+          r1_187 = r1_187.settings
+          r1_187 = r1_187.gkDebug
+          if not r1_187 then
+            ::label_218::
+            r1_187 = type
+            r1_187 = r1_187(r25_0)
+            if r1_187 == "table" then
+              r1_187 = r25_0
+              r1_187 = r1_187.gkDebug
+              if r1_187 then
+                ::label_227::
+                r1_187 = {}
+                r73_0 = r1_187
+                r1_187 = __gkDbgHeader
+                r1_187("Autosave Tick")
+              end
+            end
+          else
+            goto label_227 -- block#34 is visited secondly
+          end
+        end
+      else
+        goto label_218 -- block#32 is visited secondly
+      end
+      r1_187 = r94_0
+      r1_187 = r1_187()
+      if r1_187 then
+        r1_187 = _G
+        if r1_187 then
+          r1_187 = type
+          r1_187 = r1_187(_G.settings)
+          if r1_187 == "table" then
+            r1_187 = _G
+            r1_187 = r1_187.settings
+            r1_187 = r1_187.gkDebug
+            if not r1_187 then
+              ::label_250::
+              r1_187 = type
+              r1_187 = r1_187(r25_0)
+              if r1_187 == "table" then
+                r1_187 = r25_0
+                r1_187 = r1_187.gkDebug
+                if r1_187 then
+                  ::label_259::
+                  r1_187 = r75_0
+                  r1_187("EarlyReturn: ball already in our goal")
+                end
+              end
+            else
+              goto label_259 -- block#41 is visited secondly
+            end
+          end
+        else
+          goto label_250 -- block#39 is visited secondly
+        end
+        return
+      end
+      r1_187 = r97_0
+      local r1_187, r2_187 = r1_187()
+      if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+        r76_0("isHeadingToGoal", r1_187)
+      end
+      if r1_187 and r2_187 then
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("ball", r2_187 and r2_187.Position)
+        end
+        local r3_187 = r92_0()
+        if not r3_187 then
+          if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+            r75_0("EarlyReturn: no goalInfo")
+          end
+          return
+        end
+        local r4_187 = r2_187.AssemblyLinearVelocity.Magnitude
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("ballSpeed", r4_187)
+        end
+        local r5_187 = r3_187.position - r46_0.Position
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("goalPos", r3_187.position)
+          r76_0("gkPos", r46_0.Position)
+        end
+        if r5_187.Magnitude == 0 then
+          if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+            r75_0("EarlyReturn: GK on goal position magnitude zero")
+          end
+          return
+        end
+        local r6_187 = r5_187.Unit
+        local r7_187 = Vector3.new(r6_187.Z, 0, -r6_187.X)
+        local r10_187 = 0.15 < r2_187.AssemblyLinearVelocity.Unit:Dot((r46_0.Position - r2_187.Position).Unit)
+        if not r10_187 then
+          return
+        end
+        local r11_187 = math.abs((r2_187.Position - r46_0.Position):Dot(r7_187))
+        local r12_187 = r25_0.gkCentralNoDiveWidth or 1
+        if r10_187 then
+          r13_187 = r12_187 * 2
+          if not r13_187 then
+            ::label_496::
+            r13_187 = r12_187
+          end
+        else
+          goto label_496 -- block#96 is visited secondly
+        end
+        if r11_187 < r13_187 then
+          return
+        end
+        r15_187 = r2_187.AssemblyLinearVelocity
+        local r16_187 = math.abs(r15_187:Dot(r7_187))
+        local r17_187 = (r2_187.Position - r3_187.position).Magnitude
+        local r19_187 = r17_187 / math.max(r4_187, 15)
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("distanceToGoal", r17_187)
+          r76_0("timeToGoal", r19_187)
+        end
+        local r20_187 = r17_187 <= r64_0
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("insideBox", r20_187)
+        end
+        local r21_187 = true
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("notTooFar", r21_187)
+        end
+        local r22_187 = nil
+        if r4_187 > 140 then
+          r22_187 = 0.25
+        elseif r4_187 > 100 then
+          r22_187 = 0.35
+        elseif r4_187 > 60 then
+          r22_187 = 0.45
+        elseif r4_187 > 40 then
+          r22_187 = 0.6
+        elseif r4_187 > 20 then
+          r22_187 = 0.75
+        elseif r20_187 and r21_187 then
+          r22_187 = 0.65
+        else
+          r22_187 = 0.85
+        end
+        local r23_187 = r19_187 * r22_187
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("factor", r22_187)
+        end
+        local r24_187 = nil
+        local r25_187 = nil
+        if r4_187 > 140 then
+          r24_187 = 0.15
+          r25_187 = 0.6
+        elseif r4_187 > 100 then
+          r24_187 = 0.2
+          r25_187 = 0.8
+        elseif r4_187 > 50 then
+          r24_187 = 0.25
+          r25_187 = 1.2
+        else
+          r24_187 = 0.35
+          r25_187 = 1.5
+        end
+        r23_187 = math.clamp(r23_187, r24_187, r25_187)
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("laterPredictionTime", r23_187)
+        end
+        if r4_187 > 140 then
+          r23_187 = r23_187 * 0.75
+        elseif r4_187 > 100 then
+          r23_187 = r23_187 * 0.8
+        elseif r4_187 > 70 then
+          r23_187 = r23_187 * 0.85
+        elseif r4_187 > 50 then
+          r23_187 = r23_187 * 0.95
+        end
+        if r16_187 > 6 then
+          r23_187 = math.max(r23_187, 0.4)
+        end
+        local r26_187 = r2_187.AssemblyLinearVelocity.Y
+        local r27_187 = r2_187.AssemblyLinearVelocity
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("ballVel", r27_187)
+          r76_0("ballVelY", r26_187)
+        end
+        local r28_187 = r95_0(r2_187, r23_187) or r2_187.Position
+        if type(r25_0) == "table" and r25_0.gkDebug then
+          r111_0("later", Color3.fromRGB(255, 220, 100), 1.5).CFrame = CFrame.new(r28_187)
+        end
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("laterPredictedPos", r28_187)
+        end
+        local r29_187 = math.max(0.1, r23_187 * 0.5)
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("t_short", r29_187)
+        end
+        local r30_187 = math.max(0.15, r23_187 * 0.75)
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("t_med", r30_187)
+        end
+        local r31_187 = math.max(0.2, math.min(r23_187 * 1, r23_187 + 0.25))
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("t_late", r31_187)
+        end
+        local r32_187 = r95_0(r2_187, r29_187) or r28_187
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("pos_short", r32_187)
+        end
+        local r33_187 = r95_0(r2_187, r30_187) or r28_187
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("pos_med", r33_187)
+        end
+        local r34_187 = r95_0(r2_187, r31_187) or r28_187
+        if type(r25_0) == "table" and r25_0.gkDebug then
+          r111_0("pos_short", Color3.fromRGB(100, 200, 255), 0.9).CFrame = CFrame.new(r32_187)
+          r111_0("pos_med", Color3.fromRGB(80, 160, 255), 1.2).CFrame = CFrame.new(r33_187)
+          r111_0("pos_late", Color3.fromRGB(50, 120, 255), 1.4).CFrame = CFrame.new(r34_187)
+        end
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("pos_late", r34_187)
+        end
+        local r35_187 = nil
+        if r4_187 > 120 then
+          if r95_0(r2_187, 0.1) then
+            r35_187 = r2_187.Position
+          end
+        else
+          r35_187 = r33_187
+        end
+        local r36_187 = r27_187:Dot(r7_187)
+        local r37_187 = (r32_187 - r46_0.Position):Dot(r7_187)
+        local r38_187 = (r33_187 - r46_0.Position):Dot(r7_187)
+        local r39_187 = (r34_187 - r46_0.Position):Dot(r7_187)
+        local r40_187 = _G
+        if r40_187 then
+          r40_187 = type(_G.settings)
+          if r40_187 == "table" then
+            r40_187 = _G.settings.gkDebug
+            if not r40_187 then
+              ::label_1138::
+              r40_187 = type(r25_0)
+              if r40_187 == "table" then
+                r40_187 = r25_0.gkDebug
+                if r40_187 then
+                  ::label_1147::
+                  r76_0("ballVelLateral", r36_187)
+                  r76_0("lat_short", r37_187)
+                  r76_0("lat_med", r38_187)
+                  r76_0("lat_late", r39_187)
+                end
+              end
+            else
+              goto label_1147 -- block#238 is visited secondly
+            end
+          end
+        else
+          goto label_1138 -- block#236 is visited secondly
+        end
+        if r36_187 > 0 then
+          r40_187 = "Right" or "Left"
+        else
+          goto label_1168 -- block#241 is visited secondly
+        end
+        local r41_187 = {
+          short = r40_187,
+          med = r40_187,
+          late = r40_187,
+        }
+        local r43_187 = r82_0(r41_187, math.abs((r28_187 - r46_0.Position):Dot(r7_187)), r19_187)
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("votes.short", r41_187.short)
+          r76_0("votes.med", r41_187.med)
+          r76_0("votes.late", r41_187.late)
+          r76_0("confidence", r43_187)
+        end
+        r80_0(r41_187.med)
+        local r44_187 = r46_0.Position.Y
+        local r45_187 = r28_187.Y
+        local r46_187 = r44_187 + 4
+        if r46_187 < r45_187 and 5 < r26_187 then
+          r46_187 = r45_187 - r44_187 + 2
+          r23_187 = r23_187 + math.sqrt(math.abs(2 * r46_187 / 9.8)) * 0.5
+          if r95_0(r2_187, r23_187) then
+            r28_187 = r28_187
+          end
+        end
+        if r20_187 and r21_187 then
+          r46_187 = 0.6 or 0.85
+        else
+          goto label_1263 -- block#254 is visited secondly
+        end
+        r28_187 = r95_0(r2_187, r23_187 + math.clamp(r63_0 * r46_187, 0, 0.3))
+        if r28_187 then
+          r28_187 = r28_187
+        end
+        local r48_187 = r28_187 - r46_0.Position
+        local r49_187 = r48_187:Dot(r7_187)
+        local r50_187 = r48_187:Dot(r6_187)
+        local r54_187 = math.clamp(math.max(((r3_187.position - r2_187.Position)):Dot(r6_187), 0) / math.max(r27_187:Dot(r6_187), 1), 0, r72_0)
+        local r56_187 = (r2_187.Position + r27_187 * r54_187 - r3_187.position):Dot(r7_187)
+        local r57_187 = math.abs(r56_187)
+        local r58_187 = type(r25_0)
+        if r58_187 == "table" then
+          r58_187 = r25_0.gkDebug
+          if r58_187 then
+            r58_187 = r3_187.position + r6_187 * 0 + r7_187 * r56_187
+            r111_0("goal_plane", Color3.fromRGB(255, 80, 80), 1.2).CFrame = CFrame.new(r58_187)
+          end
+        end
+        if not r20_187 then
+          r58_187 = r68_0 * 0.85
+          if r58_187 <= r57_187 then
+            r58_187 = r54_187 <= r72_0
+          end
+        else
+          goto label_1359 -- block#262 is visited secondly
+        end
+        local r60_187 = r95_0(r2_187, 0.18) or r2_187.Position
+        local r61_187 = r60_187 - r46_0.Position
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("shortPredictedPos", r60_187)
+        end
+        local r62_187 = r61_187:Dot(r7_187)
+        local r63_187 = r61_187:Dot(r6_187)
+        local r65_187 = r68_0 * r69_0
+        local r66_187 = math.abs((r28_187 - r3_187.position):Dot(r7_187))
+        local r67_187 = nil -- notice: implicit variable refs by block#[293, 313, 371, 391, 413, 436]
+        if not r20_187 and r65_187 <= r66_187 then
+          r67_187 = r17_187 <= 70
+        else
+          goto label_1423 -- block#275 is visited secondly
+        end
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("lateralFromCenter", r66_187)
+          r76_0("cornerThreshold", r65_187)
+        end
+        local r68_187 = r28_187 - r46_0.Position
+        local r69_187 = math.abs(r68_187:Dot(r7_187))
+        local r70_187 = nil -- notice: implicit variable refs by block#[294, 314, 372, 414, 437]
+        if r69_187 >= 8 then
+          r70_187 = r68_187.Magnitude <= 20
+        else
+          goto label_1470 -- block#285 is visited secondly
+        end
+        if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+          r76_0("lateralGap", r69_187)
+          r76_0("toLaterMag", r68_187.Magnitude)
+        end
+        local r71_187 = r66_0
+        local r72_187 = r67_0
+        if r67_187 or r70_187 then
+          r71_187 = math.max(r71_187, 14)
+          r72_187 = math.max(r72_187, 0.9)
+        end
+        local r73_187 = false
+        if r58_187 then
+          if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+            r76_0("allowCornerCommitPlane", true)
+            r76_0("lateral_at_plane", r56_187)
+          end
+          r73_187 = true
+        end
+        local r74_187 = r61_187.Magnitude
+        if r19_187 > 0.4 and r74_187 > r66_0 * 1.05 then
+          local r75_187 = r61_187.Magnitude
+          if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+            r76_0("distanceToPredicted", r75_187)
+          end
+          if not r58_187 and not r67_187 and not r70_187 and r71_187 < r75_187 and r72_187 < r19_187 then
+            if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+              r75_0("GateHold: waiting (distance/time not urgent)")
+            end
+            return
+          end
+        end
+        local r75_187 = false
+        local r76_187 = (r3_187.position - r28_187).Magnitude
+        if r149_0 then
+          if r25_0.gkRepositionThreshold < (r46_0.Position - r149_0).Magnitude or 4 < r74_187 then
+            r75_187 = true
+          end
+        else
+          r75_187 = true
+        end
+        local r77_187 = r25_0.gkSaveRange
+        if r4_187 > 50 then
+          r77_187 = r77_187 * 1.5
+        end
+        if r75_187 and r25_0.gkMinDiveDistance < r74_187 and r77_187 * 1.2 < r74_187 and 0.6 < tick() - r147_0 and (r76_187 >= r61_0 or r62_0 > r76_187) then
+          moveTowardsPosition(r28_187 + r6_187 * 1.5, 1.3)
+          r149_0 = r46_0.Position
+        end
+        if tick() - r147_0 >= 0.4 then
+          local r79_187 = r25_0.gkSaveRange
+          if r73_187 then
+            r79_187 = r79_187 * 1.3
+          end
+          if r4_187 > 50 then
+            r79_187 = r79_187 * 1.5
+          end
+          local r80_187 = nil
+          local r81_187 = nil
+          local r82_187 = r46_0
+          local r83_187 = r6_187 or r82_187.CFrame.LookVector
+          local r84_187 = r7_187 or r82_187.CFrame.RightVector
+          local r85_187 = r2_187.AssemblyLinearVelocity
+          local r86_187 = r2_187.Position - r82_187.Position
+          local r87_187 = r85_187:Dot(r83_187)
+          local r88_187 = 0.001
+          local r89_187 = math.clamp
+          local r90_187 = -r86_187:Dot(r83_187)
+          local r91_187 = math.abs(r87_187)
+          if r91_187 < r88_187 then
+            if r87_187 >= 0 then
+              r91_187 = r88_187 or -r88_187 or r87_187
+            else
+              goto label_1733 -- block#350 is visited secondly
+            end
+          else
+            goto label_1736 -- block#351 is visited secondly
+          end
+          r89_187 = r89_187(r90_187 / r91_187, 0, 0.6)
+          r90_187 = r86_187 + r85_187 * r89_187
+          r91_187 = r90_187:Dot(r84_187)
+          local r92_187 = r90_187:Dot(r83_187)
+          local r94_187 = math.abs(r91_187)
+          local r95_187 = r94_187 <= 10
+          local r96_187 = (r46_0.Position - r2_187.Position).Unit
+          local r97_187 = r85_187.Magnitude
+          if r97_187 > 0 then
+            r97_187 = r85_187.Unit or r83_187
+          else
+            goto label_1769 -- block#357 is visited secondly
+          end
+          local r98_187 = 0.65 < r97_187:Dot(r96_187)
+          lastPredSign = lastPredSign or 0
+          local r99_187 = r91_187
+          local r100_187 = math.abs(r99_187)
+          if r100_187 < 0.4 then
+            r100_187 = 0.3 * r85_187:Dot(r84_187)
+            r99_187 = r99_187 + r100_187
+          end
+          if r99_187 >= 0 then
+            r100_187 = 1 or -1
+          else
+            goto label_1799 -- block#367 is visited secondly
+          end
+          if r100_187 ~= lastPredSign and r89_187 <= 0.12 then
+            r100_187 = lastPredSign
+          end
+          lastPredSign = r100_187
+          local r101_187 = 1
+          local r102_187 = 2.5
+          local r103_187 = nil
+          local r104_187 = nil
+          local r105_187 = nil -- notice: implicit variable refs by block#[376, 379, 406]
+          if r67_187 or r70_187 then
+            if r100_187 > 0 then
+              r105_187 = "Right"
+              if not r105_187 then
+                ::label_1819::
+                r105_187 = "Left"
+              end
+            else
+              goto label_1819 -- block#375 is visited secondly
+            end
+            tchosenDirection = r105_187
+            if r100_187 > 0 then
+              r105_187 = "RightDive"
+              if not r105_187 then
+                ::label_1826::
+                r105_187 = "LeftDive"
+              end
+            else
+              goto label_1826 -- block#378 is visited secondly
+            end
+            tanimToPlay = r105_187
+          elseif r98_187 and (r95_187 or r95_187 and r92_187 <= 2) then
+            r103_187 = "Forward"
+            r104_187 = "ForwardDive"
+          elseif r98_187 and (r101_187 < r92_187 or 2 < r92_187 and r94_187 < r102_187) then
+            r103_187 = "Forward"
+            r104_187 = "ForwardDive"
+          elseif r102_187 <= r94_187 or r67_187 or r58_187 or r74_187 <= r79_187 then
+            if r100_187 > 0 then
+              r105_187 = "Right"
+              r103_187 = r105_187 or "Left"
+            else
+              goto label_1864 -- block#396 is visited secondly
+            end
+            if r100_187 > 0 then
+              r105_187 = "RightDive"
+              if r105_187 then
+                ::label_1870::
+                r104_187 = "LeftDive"
+              end
+            else
+              goto label_1870 -- block#399 is visited secondly
+            end
+          elseif r74_187 < 7 then
+            if r94_187 >= 1.2 then
+              if r100_187 > 0 then
+                r105_187 = "Right"
+                if not r105_187 then
+                  ::label_1881::
+                  r105_187 = "Left"
+                end
+              else
+                goto label_1881 -- block#405 is visited secondly
+              end
+              tchosenDirection = r105_187
+              if r100_187 > 0 then
+                r105_187 = "RightDive"
+                if r105_187 then
+                  ::label_1888::
+                  r104_187 = "LeftDive"
+                end
+              else
+                goto label_1888 -- block#408 is visited secondly
+              end
+            else
+              r103_187 = "Forward"
+              r104_187 = "ForwardDive"
+            end
+          end
+          r105_187 = 0.55
+          if r4_187 > 100 then
+            r105_187 = 0.35
+          elseif r67_187 or r70_187 or r58_187 then
+            r105_187 = 0.4
+          end
+          if r43_187 < r105_187 and 0.45 < r19_187 and r79_187 * 1.1 < r74_187 then
+            if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+              r75_0("Skip: low confidence")
+            end
+            return
+          end
+          if _G and type(_G.settings) == "table" and _G.settings.gkDebug or type(r25_0) == "table" and r25_0.gkDebug then
+            r76_0("chosenDirection_precheck", r103_187 or "nil")
+            r76_0("effectiveSaveRange", r79_187)
+            r76_0("distanceToPredicted", r74_187)
+          end
+          local r106_187 = r79_187 * 1.5
+          if r58_187 or r67_187 or r70_187 then
+            r106_187 = r79_187 * 2.5
+          end
+          if r4_187 > 100 then
+            r106_187 = r106_187 * 1.3
+          end
+          if r103_187 and r74_187 <= r106_187 then
+            local r107_187 = nil
+            local r112_187 = nil -- notice: implicit variable refs by block#[523, 532, 533, 534, 535, 538, 539, 540, 541]
+            local r118_187 = nil -- notice: implicit variable refs by block#[488]
+            if r103_187 == "Forward" then
+              local r109_187 = Vector3.new(r28_187.X, r46_0.Position.Y, r28_187.Z) - r46_0.Position
+              local r110_187 = r109_187:Dot(r6_187)
+              r109_187 = r6_187 * math.max(0, r110_187) + r109_187 - r6_187 * r110_187
+              r112_187 = r109_187.Magnitude
+              if r112_187 < 0.001 then
+                r109_187 = r6_187 * 1.5
+                r112_187 = r109_187.Magnitude
+              end
+              r107_187 = r46_0.Position + r109_187.Unit * math.min(r112_187 * math.clamp(r4_187 / 30, 1.4, 3), 17)
+              if r107_187.Y - r46_0.Position.Y > 8 then
+                r107_187 = Vector3.new(r107_187.X, r46_0.Position.Y + 8, r107_187.Z)
+              end
+            elseif r103_187 == "Left" or r103_187 == "Right" then
+              local r109_187 = math.abs(r91_187) * 1.4
+              if r4_187 > 40 then
+                r109_187 = r109_187 * 1.3
+              elseif r4_187 > 60 then
+                r109_187 = r109_187 * 1.6
+              end
+              if (r2_187.Position - r46_0.Position).Magnitude > 15 then
+                r109_187 = r109_187 * 1.2
+              end
+              local r111_187 = math.clamp(r109_187, 5, 15)
+              r112_187 = math.min(r28_187.Y, r46_0.Position.Y + 8)
+              local r113_187 = nil
+              if r103_187 == "Left" then
+                r118_187 = r7_187.Z * r111_187
+                r113_187 = Vector3.new(r46_0.Position.X - r7_187.X * r111_187, r112_187, r46_0.Position.Z - r118_187)
+              else
+                r118_187 = r7_187.Z * r111_187
+                r113_187 = Vector3.new(r46_0.Position.X + r7_187.X * r111_187, r112_187, r46_0.Position.Z + r118_187)
+              end
+              if (r113_187 - r3_187.position).Magnitude < (r46_0.Position - r3_187.position).Magnitude - 2 then
+                local r116_187 = r111_187 * 0.6
+                if r103_187 == "Left" then
+                  r113_187 = Vector3.new(r46_0.Position.X - r7_187.X * r116_187, r112_187, r46_0.Position.Z - r7_187.Z * r116_187)
+                else
+                  r113_187 = Vector3.new(r46_0.Position.X + r7_187.X * r116_187, r112_187, r46_0.Position.Z + r7_187.Z * r116_187)
+                end
+              end
+              r107_187 = r113_187
+            end
+            r39_0.wait(math.clamp(r63_0 * 0.3, 0, 0.1))
+            local r108_187 = r25_0.gkDiveHeight
+            if r103_187 ~= "Forward" then
+              r108_187 = math.clamp(r25_0.gkDiveHeight * 0.8, 0.5, r25_0.gkDiveHeight)
+            end
+            r108_187 = math.min(r108_187, 8)
+            local r109_187 = r32_0()
+            local r110_187 = false
+            local r111_187 = false
+            if r109_187 then
+              r112_187 = r127_0
+              if r109_187 ~= r112_187 then
+                r112_187 = true
+                pcall(function()
+                  -- line: [0, 0] id: 191
+                  r112_187 = r109_187.TeamColor ~= r127_0.TeamColor
+                end)
+                local r113_187 = r109_187.Character
+                local r114_187 = r113_187 and r113_187:FindFirstChild("HumanoidRootPart")
+                if r112_187 and r114_187 and r46_0 and (r114_187.Position - r46_0.Position).Magnitude <= 10 then
+                  r110_187 = true
+                  r111_187 = true
+                end
+                -- close: r112_187
+              end
+            end
+            if r103_187 == "Forward" and r110_187 then
+              r112_187 = false
+              local r113_187 = r45_0 and r45_0:FindFirstChild("Head")
+              if r113_187 and r98_187 then
+                local r115_187 = r28_187.Y - r113_187.Position.Y
+                local r117_187 = (Vector3.new(r28_187.X, r46_0.Position.Y, r28_187.Z) - r46_0.Position).Magnitude
+                if not r19_187 or r19_187 > 0.24 then
+                  r118_187 = r74_187 <= 11
+                else
+                  goto label_2290 -- block#486 is visited secondly
+                end
+                if 0.8 < r115_187 and r118_187 then
+                  if r117_187 <= 3 then
+                    local r119_187 = game:GetService("VirtualInputManager")
+                    r30_0()
+                    r112_187 = true
+                  elseif r117_187 <= 9 and r103_187 ~= "Forward" then
+                    local r119_187 = 0
+                    if game.PlaceId == 16071359275 and math.abs(r91_187) <= (r68_0 or 14) and r74_187 <= 12 then
+                      r119_187 = 0.06 + (r63_0 or 0) * 0.25
+                    end
+                    if r119_187 > 0 then
+                      r39_0.wait(r119_187)
+                    end
+                    local r120_187 = false
+                    local r121_187 = r45_0 and r45_0:FindFirstChild("Head")
+                    if r121_187 and r98_187 then
+                      local r123_187 = r28_187.Y - r121_187.Position.Y
+                      local r125_187 = (Vector3.new(r28_187.X, r46_0.Position.Y, r28_187.Z) - r46_0.Position).Magnitude
+                      local r126_187 = nil -- notice: implicit variable refs by block#[516]
+                      if not r19_187 or r19_187 > 0.24 then
+                        r126_187 = r74_187 <= 11
+                      else
+                        goto label_2377 -- block#514 is visited secondly
+                      end
+                      if 1.3 < r123_187 and r126_187 then
+                        if r125_187 <= 1 then
+                          r30_0()
+                          r120_187 = true
+                        elseif r125_187 <= 9 and r103_187 ~= "Forward" then
+                          r30_0()
+                          r29_0(r103_187)
+                          r120_187 = true
+                        end
+                      end
+                    end
+                    r31_0(r103_187)
+                    r120_187 = true
+                  end
+                end
+              end
+              if not r112_187 then
+                r29_0("Forward")
+              end
+              r142_0.saves = r142_0.saves + 1
+              r147_0 = tick()
+            elseif not r111_187 then
+              if r103_187 == "Forward" then
+                if r91_187 and 0 <= r91_187 then
+                  r103_187 = "Right"
+                else
+                  r103_187 = "Left"
+                end
+              end
+              r112_187 = r45_0
+              if r112_187 then
+                r112_187 = r45_0
+                r112_187 = r112_187:FindFirstChild("Head")
+              end
+              if r112_187 and 0.8 < r2_187.Position.Y - r112_187.Position.Y and (r2_187.Position - r46_0.Position).Magnitude <= 12 then
+                r31_0(r103_187)
+                r142_0.saves = r142_0.saves + 1
+                r147_0 = tick()
+                return
+              end
+              r112_187 = __didJumpPreDive
+              if not r112_187 then
+                r112_187 = __didJumpPreDive
+                if not r112_187 then
+                  r112_187 = r29_0
+                  r112_187(r103_187)
+                end
+              end
+              r112_187 = r142_0
+              r112_187.saves = r142_0.saves + 1
+              r112_187 = tick
+              r112_187 = r112_187()
+              r147_0 = r112_187
+            end
+            -- close: r107_187
+          end
+        end
+      end
+    end
+  end
+end)
+local r150_0 = game:GetService("RunService")
+local r152_0 = game:GetService("Players").LocalPlayer
+local r153_0 = nil
+local r154_0 = nil
+local r155_0 = nil
+local function r156_0()
+  -- line: [0, 0] id: 194
+  if r153_0 and r153_0.Parent then
+    return r153_0
+  end
+  local r0_194 = Instance.new("Part")
+  r0_194.Name = "GK_DebugPredict"
+  r0_194.Anchored = true
+  r0_194.CanCollide = false
+  r0_194.Material = Enum.Material.Neon
+  r0_194.Color = Color3.fromRGB(255, 200, 0)
+  r0_194.Shape = Enum.PartType.Ball
+  r0_194.Size = Vector3.new(1.2, 1.2, 1.2)
+  r0_194.Parent = r48_0
+  r153_0 = r0_194
+  return r0_194
+end
+local function r157_0(r0_76)
+  -- line: [0, 0] id: 76
+  if r154_0 and r154_0.Parent then
+    return r154_0
+  end
+  if not r0_76 then
+    return nil
+  end
+  local r1_76 = Instance.new("BillboardGui")
+  r1_76.Name = "GK_DebugSpeed"
+  r1_76.Size = UDim2.new(0, 150, 0, 36)
+  r1_76.AlwaysOnTop = true
+  r1_76.StudsOffset = Vector3.new(0, 3, 0)
+  r1_76.Parent = r0_76
+  local r2_76 = Instance.new("TextLabel")
+  r2_76.BackgroundTransparency = 1
+  r2_76.Size = UDim2.new(1, 0, 1, 0)
+  r2_76.TextScaled = true
+  r2_76.Font = Enum.Font.GothamBold
+  r2_76.TextColor3 = Color3.fromRGB(255, 255, 255)
+  r2_76.TextStrokeTransparency = 0
+  r2_76.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+  r2_76.Text = "Speed: 0 s/s"
+  r2_76.Parent = r1_76
+  r154_0 = r1_76
+  r155_0 = r2_76
+  return r1_76
+end
+local function r158_0()
+  -- line: [0, 0] id: 169
+  if r153_0 then
+    pcall(function()
+      -- line: [0, 0] id: 171
+      r153_0:Destroy()
+    end)
+    r153_0 = nil
+  end
+  if r154_0 then
+    pcall(function()
+      -- line: [0, 0] id: 170
+      r154_0:Destroy()
+    end)
+    r154_0 = nil
+    r155_0 = nil
+  end
+end
+r39_0.spawn(function()
+  -- line: [0, 0] id: 67
+  -- notice: unreachable block#18
+  while true do
+    r39_0.wait(0.05)
+    local r0_67 = type(r25_0)
+    if r0_67 == "table" then
+      r0_67 = r25_0.gkDebug and (true or false)
+    else
+      goto label_16 -- block#3 is visited secondly
+    end
+    if not r0_67 then
+      r158_0()
+    else
+      local r1_67 = r48_0:FindFirstChild("ball")
+      if not r1_67 then
+        r158_0()
+      else
+        local r2_67 = r1_67.AssemblyLinearVelocity or Vector3.new(0, 0, 0)
+        local r3_67 = math.floor(r2_67.Magnitude + 0.5)
+        r157_0(r1_67)
+        if r155_0 then
+          r155_0.Text = "Speed: " .. tostring(r3_67) .. " s/s"
+        end
+        local r4_67 = nil
+        if r95_0 then
+          r4_67 = r95_0(r1_67, 0.5)
+        end
+        if not r4_67 then
+          r4_67 = r1_67.Position + r2_67 * 0.5
+        end
+        r156_0()
+        if r153_0 then
+          r153_0.Position = r4_67
+        end
+      end
+    end
+  end
+end)
+-- close: r150_0
+r39_0.spawn(function()
+  -- line: [0, 0] id: 151
+  local r0_151 = 0
+  local r1_151 = 0
+  local r2_151 = game:GetService("VirtualInputManager")
+  local function r3_151()
+    -- line: [0, 0] id: 158
+    local r0_158, r1_158 = pcall(function()
+      -- line: [0, 0] id: 159
+      return game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue()
+    end)
+    if r0_158 and type(r1_158) == "number" then
+      return math.clamp(r1_158 / 1000, 0.02, 0.15)
+    end
+    return 0.05
+  end
+  local function r4_151(r0_155)
+    -- line: [0, 0] id: 155
+    local r1_155 = r32_0
+    if r1_155 then
+      r1_155 = r32_0() or nil
+    else
+      goto label_7 -- block#2 is visited secondly
+    end
+    if not r1_155 then
+      return false
+    end
+    if r1_155 == r0_155 then
+      return true
+    end
+    local r2_155 = false
+    pcall(function()
+      -- line: [0, 0] id: 156
+      if r1_155.TeamColor == r0_155.TeamColor then
+        r2_155 = true
+      end
+    end)
+    return r2_155
+  end
+  local function r5_151(r0_152, r1_152, r2_152)
+    -- line: [0, 0] id: 152
+    if not r1_152 or not r2_152 then
+      return false
+    end
+    local r3_152 = Vector3.new(r1_152.X, 0, r1_152.Z)
+    if r3_152.Magnitude < 12 then
+      return false
+    end
+    return 0.82 < r3_152.Unit:Dot((Vector3.new(r2_152.X, 0, r2_152.Z) - Vector3.new(r0_152.X, 0, r0_152.Z)).Unit)
+  end
+  local function r6_151(r0_153, r1_153, r2_153)
+    -- line: [0, 0] id: 153
+    local r3_153 = Vector3.new(r2_153.X - r0_153.X, 0, r2_153.Z - r0_153.Z)
+    local r4_153 = Vector3.new(r1_153.X, 0, r1_153.Z)
+    if r4_153.Magnitude < 4 then
+      return false
+    end
+    return 0 < r4_153:Dot(r3_153)
+  end
+  while r39_0.wait(0.05) do
+    local r7_151 = r127_0
+    if r7_151 then
+      r7_151 = r127_0.Character
+      if not r7_151 then
+        ::label_24::
+        r11_0()
+      end
+    else
+      goto label_24 -- block#4 is visited secondly
+    end
+    r7_151 = r25_0.gkAutoSaveEnabled
+    if not r7_151 then
+      r11_0()
+    end
+    r7_151 = r127_0.Character:FindFirstChild("HumanoidRootPart")
+    if not r7_151 then
+      r11_0()
+    end
+    local r8_151 = r48_0:FindFirstChild("ball")
+    if not r8_151 then
+      r11_0()
+    end
+    if r4_151(r127_0) then
+      r11_0()
+    end
+    if os.clock() - r0_151 < r1_151 then
+      r11_0()
+    end
+    local r10_151 = r32_0
+    if r10_151 then
+      r10_151 = r32_0() or nil
+    else
+      goto label_71 -- block#17 is visited secondly
+    end
+    local r11_151 = false
+    if r10_151 then
+      pcall(function()
+        -- line: [0, 0] id: 154
+        local r0_154 = r10_151
+        if r0_154 ~= r127_0 then
+          r0_154 = r10_151.TeamColor ~= r127_0.TeamColor
+        else
+          goto label_10 -- block#2 is visited secondly
+        end
+        r11_151 = r0_154
+      end)
+    end
+    local r12_151 = (r8_151.Position - r7_151.Position).Magnitude
+    local r13_151 = false
+    if r11_151 and r12_151 <= 10 and r6_151(r8_151.Position, (r8_151.AssemblyLinearVelocity or Vector3.new()), r7_151.Position) then
+      r13_151 = true
+    elseif not r10_151 then
+      local r14_151 = r8_151.AssemblyLinearVelocity or Vector3.new()
+      local r15_151 = __getOurGoalCenter
+      if r15_151 then
+        r15_151 = __getOurGoalCenter() or nil
+      else
+        goto label_120 -- block#31 is visited secondly
+      end
+      if r15_151 and r5_151(r8_151.Position, r14_151, r15_151) and r12_151 <= 12 then
+        r13_151 = true
+      end
+    end
+    if r13_151 then
+      r7_151.CFrame = CFrame.new(r7_151.Position, Vector3.new(r8_151.Position.X, r7_151.Position.Y, r8_151.Position.Z))
+      r39_0.wait(r3_151())
+      pcall(function()
+        -- line: [0, 0] id: 157
+        r2_151:SendKeyEvent(true, Enum.KeyCode.X, false, game)
+        r39_0.wait(0.02)
+        r2_151:SendKeyEvent(false, Enum.KeyCode.X, false, game)
+      end)
+      r0_151 = os.clock()
+      r1_151 = 0.6 + r3_151()
+    end
+    -- close: r7_151
+  end
+end)
+if not r25_0 then
+  r25_0 = {}
+end
+if r25_0.reachEnabled == nil then
+  r25_0.reachEnabled = false
+end
+if r25_0.reachDistance == nil then
+  r25_0.reachDistance = 15
+end
+if r25_0.reachInterval == nil then
+  r25_0.reachInterval = 0.3
+end
+r152_0 = {}
+r153_0 = "reach"
+r152_0.Name = r153_0
+r153_0 = "hand"
+r152_0.Icon = r153_0
+r153_0 = true
+r152_0.EnableScrolling = r153_0
+r150_0 = r101_0:DrawTab(r152_0)
+r153_0 = {}
+r154_0 = "ball possession"
+r153_0.Name = r154_0
+r153_0.Position = "left"
+local r151_0 = r150_0:DrawSection(r153_0)
+r154_0 = {}
+r155_0 = "enable dishi"
+r154_0.Name = r155_0
+r155_0 = "ReachEnable"
+r154_0.Flag = r155_0
+r155_0 = false
+r154_0.Default = r155_0
+function r155_0(r0_86)
+  -- line: [0, 0] id: 86
+  r25_0.reachEnabled = r0_86
+end
+r154_0.Callback = r155_0
+r151_0:AddToggle(r154_0)
+r154_0 = {}
+r155_0 = "distance"
+r154_0.Name = r155_0
+r155_0 = 5
+r154_0.Min = r155_0
+r155_0 = 40
+r154_0.Max = r155_0
+r155_0 = "reachDistance"
+r155_0 = r25_0[r155_0]
+r154_0.Default = r155_0
+r155_0 = 0
+r154_0.Round = r155_0
+r155_0 = "ReachDist"
+r154_0.Flag = r155_0
+function r155_0(r0_122)
+  -- line: [0, 0] id: 122
+  r25_0.reachDistance = r0_122
+end
+r154_0.Callback = r155_0
+r151_0:AddSlider(r154_0)
+function r153_0()
+  -- line: [0, 0] id: 134
+  -- notice: unreachable block#17
+  while true do
+    r39_0.wait(r25_0.reachInterval or 0.3)
+    local r0_134 = r25_0.reachEnabled
+    if r0_134 then
+      r0_134 = r48_0:FindFirstChild("ball") or r48_0:FindFirstChild("Ball")
+      local r1_134 = game:GetService("Players").LocalPlayer
+      local r2_134 = r1_134 and (r1_134.Character or r1_134.CharacterAdded:Wait())
+      local r3_134 = r2_134 and r2_134:FindFirstChild("HumanoidRootPart")
+      if r0_134 and r3_134 and (r3_134.Position - r0_134.Position).Magnitude <= (r25_0.reachDistance or 15) then
+        pcall(function()
+          -- line: [0, 0] id: 135
+          firetouchinterest(r3_134, r0_134, 0)
+          r39_0.wait(0.01)
+          firetouchinterest(r3_134, r0_134, 1)
+        end)
+      end
+      -- close: r0_134
+    end
+  end
+end
+r39_0.spawn(r153_0)
+r152_0 = {}
+r153_0 = "shooting"
+r152_0.Name = r153_0
+r153_0 = "target"
+r152_0.Icon = r153_0
+r153_0 = true
+r152_0.EnableScrolling = r153_0
+r150_0 = r101_0:DrawTab(r152_0)
+r153_0 = {}
+r154_0 = "auto shoot (7v7 recommended)"
+r153_0.Name = r154_0
+r153_0.Position = "left"
+r151_0 = r150_0:DrawSection(r153_0)
+r152_0 = {}
+r153_0 = "enabled"
+r154_0 = false
+r152_0[r153_0] = r154_0
+r153_0 = "shotDistance"
+r154_0 = 130
+r152_0[r153_0] = r154_0
+r153_0 = "chargeTime"
+r154_0 = 1.2
+r152_0[r153_0] = r154_0
+r153_0 = "cooldown"
+r154_0 = 1
+r152_0[r153_0] = r154_0
+r153_0 = "possessionProximity"
+r154_0 = 5
+r152_0[r153_0] = r154_0
+r153_0 = "toggleKey"
+r154_0 = Enum
+r155_0 = "KeyCode"
+r154_0 = r154_0[r155_0]
+r155_0 = "LeftControl"
+r154_0 = r154_0[r155_0]
+r152_0[r153_0] = r154_0
+r153_0 = "lastShotT"
+r154_0 = 0
+r152_0[r153_0] = r154_0
+r153_0 = "isShooting"
+r154_0 = false
+r152_0[r153_0] = r154_0
+r153_0 = "cameraToGoal"
+r154_0 = false
+r152_0[r153_0] = r154_0
+r153_0 = game
+r153_0 = r153_0.PlaceId
+r154_0 = 16071359275
+if r153_0 ~= r154_0 then
+  r153_0 = game
+  r153_0 = r153_0.PlaceId
+  r154_0 = 16213033715
+  if r153_0 ~= r154_0 then
+    r153_0 = game
+    r153_0 = r153_0.PlaceId
+    r154_0 = 109525531177846
+    if r153_0 == r154_0 then
+      ::label_1228::
+      r153_0 = "shotDistance"
+      r154_0 = 130
+      r152_0[r153_0] = r154_0
+    else
+      r153_0 = "shotDistance"
+      r154_0 = 90
+      r152_0[r153_0] = r154_0
+    end
+  end
+else
+  goto label_1228 -- block#74 is visited secondly
+end
+r155_0 = {}
+r156_0 = "Enable"
+r155_0.Name = r156_0
+r156_0 = "ShootEnable"
+r155_0.Flag = r156_0
+r156_0 = false
+r155_0.Default = r156_0
+function r156_0(r0_3)
+  -- line: [0, 0] id: 3
+  r152_0.enabled = r0_3
+end
+r155_0.Callback = r156_0
+r151_0:AddToggle(r155_0)
+r155_0 = {}
+r156_0 = "Range (studs)"
+r155_0.Name = r156_0
+r156_0 = 20
+r155_0.Min = r156_0
+r156_0 = 150
+r155_0.Max = r156_0
+r156_0 = "shotDistance"
+r156_0 = r152_0[r156_0]
+r155_0.Default = r156_0
+r156_0 = 0
+r155_0.Round = r156_0
+r156_0 = "ShootRange"
+r155_0.Flag = r156_0
+function r156_0(r0_139)
+  -- line: [0, 0] id: 139
+  r152_0.shotDistance = r0_139
+end
+r155_0.Callback = r156_0
+r151_0:AddSlider(r155_0)
+r153_0 = game
+r155_0 = "Players"
+r153_0 = r153_0:GetService(r155_0)
+r154_0 = game
+r156_0 = "UserInputService"
+r154_0 = r154_0:GetService(r156_0)
+r155_0 = game
+r157_0 = "VirtualInputManager"
+r155_0 = r155_0:GetService(r157_0)
+r156_0 = game
+r158_0 = "RunService"
+r156_0 = r156_0:GetService(r158_0)
+r157_0 = r153_0.LocalPlayer
+r158_0 = r48_0.CurrentCamera
+local function r159_0()
+  -- line: [0, 0] id: 175
+  return r154_0.MouseBehavior == Enum.MouseBehavior.LockCenter
+end
+local function r160_0(r0_100)
+  -- line: [0, 0] id: 100
+  pcall(function()
+    -- line: [0, 0] id: 101
+    r155_0:SendKeyEvent(true, r0_100, false, game)
+    r39_0.wait(0.05)
+    r155_0:SendKeyEvent(false, r0_100, false, game)
+  end)
+end
+local function r161_0()
+  -- line: [0, 0] id: 20
+  local r0_20 = r48_0:FindFirstChild("HomeAnimatedNet")
+  local r1_20 = r48_0:FindFirstChild("AwayAnimatedNet")
+  if not r0_20 or not r1_20 then
+    return nil
+  end
+  local r2_20 = r0_20:FindFirstChild("Net")
+  local r3_20 = r1_20:FindFirstChild("Net")
+  if not r2_20 or not r3_20 then
+    return nil
+  end
+  local r4_20 = tostring(r157_0.TeamColor)
+  if r4_20:lower():find("green") or r4_20:lower():find("earth") then
+    return "Away", r3_20
+  end
+  if r4_20:lower():find("blue") or r4_20:lower():find("bright") then
+    return "Home", r2_20
+  end
+  return nil
+end
+local function r162_0()
+  -- line: [0, 0] id: 145
+  local r0_145 = r48_0:FindFirstChild("ball")
+  if not r0_145 then
+    return false
+  end
+  local r1_145 = r0_145:FindFirstChild("playerWeld")
+  if r1_145 and r1_145.Part0 and r1_145.Part0.Parent and r153_0:GetPlayerFromCharacter(r1_145.Part0.Parent) == r157_0 then
+    return true
+  end
+  local r2_145 = r0_145:FindFirstChild("creator")
+  if r2_145 and r2_145.Value then
+    if r2_145.Value == r157_0 then
+      return true
+    end
+    if r2_145.Value:IsA("Model") and r153_0:GetPlayerFromCharacter(r2_145.Value) == r157_0 then
+      return true
+    end
+  end
+  return false
+end
+local function r163_0()
+  -- line: [0, 0] id: 17
+  local r0_17 = r48_0:FindFirstChild("ball")
+  if not r0_17 then
+    return false
+  end
+  local r1_17 = r157_0.Character
+  local r2_17 = r1_17 and r1_17:FindFirstChild("HumanoidRootPart")
+  if not r2_17 then
+    return false
+  end
+  if r152_0.possessionProximity < (r2_17.Position - r0_17.Position).Magnitude then
+    return false
+  end
+  return r162_0()
+end
+local function r164_0(r0_161)
+  -- line: [0, 0] id: 161
+  local r1_161 = r0_161.Position
+  local r2_161 = r0_161.Size
+  local r3_161 = r0_161.CFrame
+  local r4_161 = r3_161.RightVector
+  local r5_161 = r3_161.UpVector
+  local r6_161 = r3_161.LookVector
+  local r7_161 = nil
+  local r8_161 = r157_0.Character
+  local r9_161 = r8_161 and r8_161:FindFirstChild("HumanoidRootPart")
+  if r9_161 then
+    r7_161 = r9_161.Position or r1_161
+  else
+    goto label_19 -- block#4 is visited secondly
+  end
+  r8_161 = r7_161 - r1_161
+  local r13_161 = math.deg(math.acos(math.clamp(Vector3.new(r8_161.X, 0, r8_161.Z).Unit:Dot(Vector3.new(r6_161.X, 0, r6_161.Z).Unit), -1, 1)))
+  local r14_161 = r8_161:Dot(r4_161)
+  local r15_161 = math.abs(r14_161)
+  local r16_161 = (r7_161 - r1_161).Magnitude
+  local r17_161 = nil
+  local r18_161 = r2_161.Y * 0.07
+  if r13_161 < 15 then
+    r17_161 = r2_161.X * 0.08
+  elseif r13_161 < 30 then
+    r17_161 = r2_161.X * 0.12
+  elseif r13_161 < 50 then
+    r17_161 = r2_161.X * 0.1
+  else
+    r17_161 = r2_161.X * 0.005
+  end
+  if r16_161 > 70 then
+    r17_161 = r17_161 * 0.1
+  elseif r16_161 > 50 then
+    r17_161 = r17_161 * 0.3
+  end
+  if r2_161.X * 0.8 < r15_161 then
+    r17_161 = r17_161 * 0.3
+  end
+  local r19_161 = nil
+  if r14_161 > 0 then
+    r19_161 = r1_161 - r4_161 * r17_161 + r5_161 * r18_161
+  else
+    r19_161 = r1_161 + r4_161 * r17_161 + r5_161 * r18_161
+  end
+  return r19_161 + r6_161 * 1.5
+end
+local function r165_0(r0_30, r1_30)
+  -- line: [0, 0] id: 30
+  if typeof(mousemoveabs) == "function" then
+    pcall(function()
+      -- line: [0, 0] id: 31
+      mousemoveabs(r0_30, r1_30)
+    end)
+  else
+    local r3_30 = nil -- notice: implicit variable refs by block#[4]
+    if typeof(mousemoverel) == "function" then
+      local r2_30 = r154_0:GetMouseLocation()
+      r3_30 = r0_30 - r2_30.X
+      local r4_30 = r1_30 - r2_30.Y
+      pcall(function()
+        -- line: [0, 0] id: 32
+        mousemoverel(r3_30, r4_30)
+      end)
+      -- close: r2_30
+    else
+      r3_30 = "No mouse movement functions available - auto shooting may not work properly"
+      warn(r3_30)
+    end
+  end
+end
+local function r166_0(r0_22)
+  -- line: [0, 0] id: 22
+  local r1_22 = game:GetService("ReplicatedStorage")
+  local r2_22 = game:GetService("VirtualInputManager")
+  local r3_22 = game:GetService("Players")
+  local r4_22 = r3_22.LocalPlayer
+  local r5_22 = r1_22:FindFirstChild("Remotes")
+  if r5_22 then
+    r5_22 = r1_22.Remotes:FindFirstChild("ShootTheBaII") or nil
+  else
+    goto label_24 -- block#2 is visited secondly
+  end
+  local r6_22 = r48_0:FindFirstChild("ball")
+  if not r0_22 or not r5_22 or not r6_22 then
+    return false
+  end
+  local r8_22 = r0_22.CFrame
+  local r9_22 = r8_22.RightVector
+  local r10_22 = r8_22.UpVector
+  local r11_22 = (function()
+    -- line: [0, 0] id: 24
+    local r1_24 = 1000000000
+    local r0_24 = nil -- notice: implicit variable refs by block#[10]
+    for r5_24, r6_24 in ipairs(r3_22:GetPlayers()) do
+      if r6_24 ~= r4_22 then
+        local r7_24 = false
+        pcall(function()
+          -- line: [0, 0] id: 25
+          r7_24 = r6_24.TeamColor == r4_22.TeamColor
+        end)
+        if not r7_24 and r6_24.Character then
+          local r8_24 = r6_24.Character:FindFirstChild("HumanoidRootPart")
+          if r8_24 then
+            local r9_24 = (r8_24.Position - r0_22.Position).Magnitude
+            if r9_24 < r1_24 then
+              r0_24 = r8_24.Position
+              r1_24 = r9_24
+            end
+          end
+        end
+        -- close: r7_24
+      end
+      -- close: r5_24
+    end
+    return r0_24
+  end)()
+  local r12_22 = nil
+  local r13_22 = nil
+  if r11_22 then
+    if (r11_22 - r0_22.Position):Dot(r9_22) >= 0 then
+      r13_22 = -1 or 1
+    else
+      goto label_59 -- block#10 is visited secondly
+    end
+  elseif (r6_22.Position - r0_22.Position):Dot(r9_22) >= 0 then
+    r13_22 = -1 or 1
+  else
+    goto label_72 -- block#14 is visited secondly
+  end
+  r12_22 = r13_22 * 8
+  r13_22 = r0_22.Size
+  if r13_22 then
+    r13_22 = r0_22.Size.Y or 8
+  else
+    goto label_81 -- block#17 is visited secondly
+  end
+  local r14_22 = r13_22 * -3.23
+  local r15_22 = (r8_22 * CFrame.new(r12_22, r14_22, 0)).Position
+  local r16_22 = r15_22 - r6_22.Position
+  local r17_22 = r16_22.Magnitude
+  if r17_22 < 0.001 then
+    r17_22 = false
+    return r17_22
+  end
+  r16_22 = r16_22.Unit
+  if r12_22 < 0 then
+    r17_22 = Enum.KeyCode.A or Enum.KeyCode.D
+  else
+    goto label_106 -- block#22 is visited secondly
+  end
+  pcall(function()
+    -- line: [0, 0] id: 23
+    r2_22:SendKeyEvent(true, r17_22, false, game)
+  end)
+  pcall(function()
+    -- line: [0, 0] id: 26
+    local r0_26, r1_26 = r161_0()
+    local r2_26 = nil
+    if r0_26 == "Home" then
+      r2_26 = r48_0:FindFirstChild("HomeGoal")
+    elseif r0_26 == "Away" then
+      r2_26 = r48_0:FindFirstChild("AwayGoal")
+    end
+    if not r2_26 then
+      r2_26 = r48_0:FindFirstChild("AwayGoal") or r48_0:FindFirstChild("HomeGoal")
+    end
+    local r3_26 = nil
+    local r4_26 = nil
+    if r2_26 and r2_26:FindFirstChild("Targets") then
+      r3_26 = r2_26.Targets:GetChildren()
+    end
+    local r5_26 = nil
+    if r2_26 and r2_26.Name == "HomeGoal" then
+      r5_26 = r48_0:FindFirstChild("AwayGoal")
+    elseif r2_26 and r2_26.Name == "AwayGoal" then
+      r5_26 = r48_0:FindFirstChild("HomeGoal")
+    end
+    if r5_26 and r5_26:FindFirstChild("Targets") then
+      r4_26 = r5_26.Targets:GetChildren()
+    else
+      r4_26 = r3_26
+    end
+    local r6_26 = 1
+    local r7_26 = nil
+    local r8_26 = nil
+    if r3_26 and r6_26 <= #r3_26 and r6_22 then
+      r7_26 = (r3_26[r6_26].Position + Vector3.new(0, r14_22, 0) - r6_22.Position).Unit
+    else
+      r7_26 = (r15_22 - r6_22.Position).Unit
+    end
+    if r4_26 and r6_26 <= #r4_26 and r6_22 then
+      r8_26 = (r4_26[r6_26].Position + Vector3.new(0, r14_22, 0) - r6_22.Position).Unit
+    else
+      r8_26 = (r15_22 - r6_22.Position).Unit
+    end
+    r5_22:FireServer(r7_26, r6_22.CFrame, tick(), r8_26, false, true)
+  end)
+  r39_0.defer(function()
+    -- line: [0, 0] id: 27
+    pcall(function()
+      -- line: [0, 0] id: 28
+      r2_22:SendKeyEvent(false, r17_22, false, game)
+    end)
+  end)
+  return true
+end
+r156_0.Heartbeat:Connect(function()
+  -- line: [0, 0] id: 40
+  if not r152_0.enabled or r152_0.isShooting then
+    return
+  end
+  local r0_40 = r157_0.Character
+  local r1_40 = r0_40 and r0_40:FindFirstChild("HumanoidRootPart")
+  if not r1_40 then
+    return
+  end
+  if not r163_0() then
+    return
+  end
+  local r2_40, r3_40 = r161_0()
+  if not r3_40 then
+    return
+  end
+  if (r1_40.Position - r3_40.Position).Magnitude <= r152_0.shotDistance and r152_0.cooldown <= tick() - r152_0.lastShotT then
+    r152_0.isShooting = true
+    r152_0.lastShotT = tick()
+    r39_0.spawn(function()
+      -- line: [0, 0] id: 41
+      local r1_41 = (function()
+        -- line: [0, 0] id: 42
+        local r0_42 = r157_0.Character
+        local r1_42 = r0_42 and r0_42:FindFirstChildOfClass("Humanoid")
+        local r2_42 = r1_42 and r1_42:FindFirstChildOfClass("Animator")
+        if not r2_42 then
+          return nil
+        end
+        local r3_42 = Instance.new("Animation")
+        r3_42.AnimationId = "rbxassetid://16153846608"
+        local r4_42 = r2_42:LoadAnimation(r3_42)
+        r4_42:Play()
+        return r4_42
+      end)()
+      r166_0(r3_40)
+      r39_0.wait(1)
+      pcall(function()
+        -- line: [0, 0] id: 43
+        if r1_41 and r1_41.IsPlaying then
+          r1_41:Stop()
+        end
+      end)
+      r152_0.isShooting = false
+    end)
+  end
+end)
+-- close: r150_0
+r152_0 = "Players"
+r150_0 = game:GetService(r152_0)
+r151_0 = r150_0.LocalPlayer
+r152_0 = game
+r154_0 = "VirtualInputManager"
+r152_0 = r152_0:GetService(r154_0)
+r153_0 = tick
+r153_0 = r153_0()
+r154_0 = spawn
+function r155_0()
+  -- line: [0, 0] id: 56
+  -- notice: unreachable block#1
+  while true do
+    r39_0.wait(0.2)
+    pcall(function()
+      -- line: [0, 0] id: 57
+      local r0_57 = r150_0.LocalPlayer.Character
+      local r1_57 = r0_57 and r0_57:FindFirstChild("HumanoidRootPart")
+      if r1_57 and 0.1 < r1_57.Velocity.Magnitude then
+        r153_0 = tick()
+      end
+      if tick() - r153_0 >= 9 then
+        r153_0 = tick()
+        r152_0:SendKeyEvent(true, Enum.KeyCode.W, false, game)
+        r39_0.wait(0.05)
+        r152_0:SendKeyEvent(false, Enum.KeyCode.W, false, game)
+      end
+    end)
+  end
+  goto label_12 -- block#1 is visited secondly
+end
+r154_0(r155_0)
+-- close: r150_0
+r150_0 = {}
+r152_0 = true
+r150_0[16071359275] = r152_0
+r152_0 = true
+r150_0[16213033715] = r152_0
+r151_0 = 15
+r152_0 = 0.5
+r153_0 = 0.4
+r154_0 = game
+r156_0 = "Players"
+r154_0 = r154_0:GetService(r156_0)
+r155_0 = game
+r157_0 = "RunService"
+r155_0 = r155_0:GetService(r157_0)
+r156_0 = game
+r158_0 = "VirtualInputManager"
+r156_0 = r156_0:GetService(r158_0)
+r157_0 = r154_0.LocalPlayer
+function r158_0(r0_138)
+  -- line: [0, 0] id: 138
+  return r0_138 and (r0_138.Character or r0_138.CharacterAdded:Wait())
+end
+function r159_0(r0_111)
+  -- line: [0, 0] id: 111
+  local r1_111 = nil -- notice: implicit variable refs by block#[3]
+  if r0_111 then
+    r1_111 = r0_111:FindFirstChild("HumanoidRootPart")
+    if not r1_111 then
+      ::label_7::
+      r1_111 = nil
+    end
+  else
+    goto label_7 -- block#2 is visited secondly
+  end
+  return r1_111
+end
+function r160_0()
+  -- line: [0, 0] id: 163
+  local r0_163 = r48_0
+  local r1_163 = nil -- notice: implicit variable refs by block#[4]
+  if r0_163 then
+    r1_163 = r0_163:FindFirstChild("ball")
+    if not r1_163 then
+      r1_163 = r0_163:FindFirstChild("Ball")
+      if not r1_163 then
+        ::label_13::
+        r1_163 = nil
+      end
+    end
+  else
+    goto label_13 -- block#3 is visited secondly
+  end
+  return r1_163
+end
+function r161_0(r0_129)
+  -- line: [0, 0] id: 129
+  if not r0_129 then
+    return nil
+  end
+  local function r1_129(r0_130, r1_130)
+    -- line: [0, 0] id: 130
+    local r2_130 = r0_130:FindFirstChild(r1_130)
+    if r2_130 and r2_130.Value and typeof(r2_130.Value) == "Instance" then
+      if r2_130.Value:IsA("Player") then
+        return r2_130.Value
+      end
+      if r2_130.Value:IsA("Model") then
+        local r3_130 = r154_0:GetPlayerFromCharacter(r2_130.Value)
+        if r3_130 then
+          return r3_130
+        end
+      end
+    end
+    return nil
+  end
+  local r2_129 = r1_129(r0_129, "creator") or r1_129(r0_129, "Owner")
+  if not r2_129 then
+    local r3_129, r4_129 = pcall(function()
+      -- line: [0, 0] id: 131
+      return r0_129:GetAttribute("OwnerUserId")
+    end)
+    if r3_129 and typeof(r4_129) == "number" then
+      r2_129 = r154_0:GetPlayerByUserId(r4_129)
+    end
+  end
+  return r2_129
+end
+function r162_0(r0_68, r1_68)
+  -- line: [0, 0] id: 68
+  if not r0_68 or not r1_68 or r0_68 == r1_68 then
+    return false
+  end
+  if r0_68.Team and r1_68.Team then
+    return r0_68.Team ~= r1_68.Team
+  end
+  if r0_68.TeamColor and r1_68.TeamColor then
+    return r0_68.TeamColor ~= r1_68.TeamColor
+  end
+  return true
+end
+function r163_0(r0_7, r1_7)
+  -- line: [0, 0] id: 7
+  local r2_7 = r0_7.Position
+  r0_7.CFrame = CFrame.new(r2_7, Vector3.new(r1_7.X, r2_7.Y, r1_7.Z))
+end
+function r164_0()
+  -- line: [0, 0] id: 149
+  pcall(function()
+    -- line: [0, 0] id: 150
+    r156_0:SendKeyEvent(true, Enum.KeyCode.X, false, game)
+    r39_0.wait(0.05)
+    r156_0:SendKeyEvent(false, Enum.KeyCode.X, false, game)
+  end)
+end
+if r150_0[game.PlaceId] then
+  r165_0 = 0
+  r166_0 = r155_0.Heartbeat
+  r166_0:Connect(function()
+    -- line: [0, 0] id: 98
+    if not r25_0 or not r25_0.gkAutoRushEnabled then
+      return
+    end
+    local r0_98 = r159_0(r158_0(r157_0))
+    if not r0_98 then
+      return
+    end
+    local r1_98 = r160_0()
+    if not r1_98 then
+      return
+    end
+    local r2_98 = r161_0(r1_98)
+    if not r2_98 or not r162_0(r157_0, r2_98) then
+      return
+    end
+    local r3_98 = r159_0(r158_0(r2_98))
+    if not r3_98 then
+      return
+    end
+    if r152_0 < (r3_98.Position - r1_98.Position).Magnitude then
+      return
+    end
+    if r151_0 < (r3_98.Position - r0_98.Position).Magnitude then
+      return
+    end
+    local r4_98 = os.clock()
+    if r4_98 - r165_0 < 0.4 then
+      return
+    end
+    r165_0 = r4_98
+    r163_0(r0_98, r3_98.Position)
+    r164_0()
+  end)
+  -- close: r165_0
+end
+-- close: r150_0
+r150_0 = game
+r152_0 = "Players"
+r150_0 = r150_0:GetService(r152_0)
+r151_0 = r150_0.LocalPlayer
+function r152_0()
+  -- line: [0, 0] id: 113
+  local r0_113 = r151_0 and r151_0.Character
+  local r1_113 = r0_113
+  local r2_113 = r0_113 and r0_113:FindFirstChild("HumanoidRootPart")
+  return r1_113, r2_113, r0_113 and r0_113:FindFirstChild("Head")
+end
+function r153_0()
+  -- line: [0, 0] id: 71
+  local r0_71 = r48_0
+  if not r0_71 then
+    return nil
+  end
+  return r0_71:FindFirstChild("ball") or r0_71:FindFirstChild("Ball")
+end
+function r154_0(r0_176)
+  -- line: [0, 0] id: 176
+  local r1_176, r2_176 = pcall(function()
+    -- line: [0, 0] id: 177
+    return r0_176.AssemblyLinearVelocity or r0_176.Velocity or Vector3.zero
+  end)
+  local r3_176 = nil -- notice: implicit variable refs by block#[3]
+  if r1_176 then
+    r3_176 = r2_176
+    if r3_176 then
+      ::label_8::
+      r3_176 = Vector3.zero
+    end
+  else
+    goto label_8 -- block#2 is visited secondly
+  end
+  return r3_176
+end
+function r155_0(r0_69, r1_69)
+  -- line: [0, 0] id: 69
+  for r5_69, r6_69 in ipairs(r1_69) do
+    local r7_69 = r0_69:FindFirstChild(r6_69, true)
+    if r7_69 and r7_69:IsA("BasePart") then
+      return r7_69
+    end
+  end
+  return nil
+end
+r156_0 = {"LeftPost"}
+r158_0 = "Left"
+r159_0 = "LPost"
+r160_0 = "GoalpostL"
+r161_0 = "LP"
+r162_0 = "PostL"
+r157_0 = {"RightPost"}
+r159_0 = "Right"
+r160_0 = "RPost"
+r161_0 = "GoalpostR"
+r162_0 = "RP"
+r163_0 = "PostR"
+r158_0 = {"Crossbar"}
+r160_0 = "Bar"
+r161_0 = "TopBar"
+r162_0 = "GoalBar"
+r163_0 = "CrossBar"
+function r159_0()
+  -- line: [0, 0] id: 49
+  local r0_49 = r155_0(r48_0, r156_0)
+  local r1_49 = r155_0(r48_0, r157_0)
+  local r2_49 = r155_0(r48_0, r158_0)
+  if not r0_49 or not r1_49 or not r2_49 then
+    return nil
+  end
+  local r3_49 = r1_49.Position - r0_49.Position
+  local r4_49 = r3_49.Magnitude
+  if r4_49 > 0 then
+    r4_49 = r3_49.Unit or Vector3.new(1, 0, 0)
+  else
+    goto label_29 -- block#6 is visited secondly
+  end
+  local r7_49 = (r0_49.Position + r1_49.Position) * 0.5
+  return {
+    left = r0_49.Position,
+    across = r4_49,
+    width = r3_49.Magnitude,
+    lowY = math.min(r0_49.Position.Y - r0_49.Size.Y * 0.5, r1_49.Position.Y - r1_49.Size.Y * 0.5),
+    highY = r2_49.Position.Y + r2_49.Size.Y * 0.5,
+    p0 = Vector3.new(r7_49.X, r2_49.Position.Y - r2_49.Size.Y * 0.5, r7_49.Z),
+    normal = r4_49:Cross(r2_49.CFrame.UpVector).Unit,
+  }
+end
+function r160_0(r0_70, r1_70, r2_70, r3_70)
+  -- line: [0, 0] id: 70
+  local r4_70 = r1_70:Dot(r3_70)
+  if math.abs(r4_70) < 0.0001 then
+    return nil
+  end
+  local r5_70 = ((r2_70 - r0_70)):Dot(r3_70) / r4_70
+  if r5_70 < 0 then
+    return nil
+  end
+  return r0_70 + r1_70 * r5_70, r5_70
+end
+function r161_0(r0_146, r1_146)
+  -- line: [0, 0] id: 146
+  local r2_146 = (r0_146 - r1_146.left):Dot(r1_146.across)
+  local r3_146 = r0_146.Y
+  local r4_146 = nil -- notice: implicit variable refs by block#[6]
+  if r2_146 >= -0.5 then
+    r4_146 = r1_146.width + 0.5
+    if r2_146 <= r4_146 then
+      r4_146 = r1_146.lowY - 0.5
+      if r4_146 <= r3_146 then
+        r4_146 = r3_146 <= r1_146.highY + 0.5
+      end
+    end
+  else
+    goto label_20 -- block#4 is visited secondly
+  end
+  return r4_146
+end
+function r162_0()
+  -- line: [0, 0] id: 182
+  local r0_182, r1_182, r2_182 = r152_0()
+  local r3_182 = r153_0()
+  if not r1_182 or not r2_182 or not r3_182 or not r3_182.Parent then
+    return false
+  end
+  if r3_182.Position.Y < r2_182.Position.Y + 1.2 then
+    return false
+  end
+  local r5_182 = r159_0()
+  local r6_182 = r154_0(r3_182)
+  if r5_182 then
+    local r7_182, r8_182 = r160_0(r3_182.Position, r6_182, r5_182.p0, r5_182.normal)
+    if r7_182 and r161_0(r7_182, r5_182) then
+      return true
+    end
+  end
+  local r7_182 = r1_182.Position - r3_182.Position
+  if r7_182.Magnitude < 0.001 or r6_182.Magnitude < 0.001 then
+    return false
+  end
+  return 0.6 < r6_182.Unit:Dot(r7_182.Unit)
+end
+r163_0 = r30_0
+function r30_0(...)
+  -- line: [0, 0] id: 141
+  if type(r25_0) ~= "table" or not r25_0.gkAutoSaveEnabled then
+    return
+  end
+  if not r162_0() then
+    return
+  end
+  if type(r163_0) == "function" then
+    local r1_141 = r163_0
+    ... = r1_141(...) -- error: untaken top expr
+  end
+end
+r164_0 = r31_0
+function r31_0(r0_54, ...)
+  -- line: [0, 0] id: 54
+  if type(r25_0) ~= "table" or not r25_0.gkAutoSaveEnabled then
+    return
+  end
+  if not r162_0() then
+    return
+  end
+  if type(r164_0) == "function" then
+    local r2_54 = r164_0
+    local r3_54 = r0_54
+    ... = r2_54(r3_54, ...) -- error: untaken top expr
+  end
+end
+-- close: r150_0
+r152_0 = {}
+r153_0 = "Settings"
+r152_0.Name = r153_0
+r101_0:DrawCategory(r152_0)
+r152_0 = {}
+r153_0 = "Themes"
+r152_0.Name = r153_0
+r153_0 = "paintbrush"
+r152_0.Icon = r153_0
+r153_0 = "Type"
+r154_0 = "Single"
+r152_0[r153_0] = r154_0
+r150_0 = r101_0:DrawTab(r152_0)
+r153_0 = {}
+r154_0 = "UI Themes"
+r153_0.Name = r154_0
+r151_0 = r150_0:DrawSection(r153_0)
+r154_0 = {
+  Name = "Select Theme",
+  Values = { "Default", "Dark Green", "Dark Blue", "Purple Rose", "Skeet" },
+  Default = "Dark Blue",
+  Callback = function(r0_58)
+    pcall(function()
+      r99_0:SetTheme(r0_58)
+    end)
+  end,
+}
+r151_0:AddDropdown(r154_0)
+r152_0 = {
+  Directory = "Catblud-UI",
+  Config = "Catblud-Configs",
+}
+r150_0 = r99_0:ConfigManager(r152_0)
+r153_0 = {
+  Name = "Config",
+  Icon = "folder",
+  Config = r150_0,
+}
+r151_0 = r101_0:DrawConfig(r153_0)
+r151_0:Init()
+-- close: r0_0
